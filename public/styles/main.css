@@ -1,0 +1,55 @@
+a {
+    text-decoration: none;
+}
+.custom-placeholder::placeholder {
+    color: #fff;
+    outline: 0;
+}
+input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+body {
+    background: linear-gradient(45deg,
+#2c3e50, #34495e, #2c3e50);
+}
+/* Add the following CSS to style the card */
+.movie-card {
+position: relative;
+overflow: hidden;
+padding: 0;
+margin: 0;
+}
+
+.card-img-overlay {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+opacity: 0;
+transition: opacity 0.3s;
+background-color: rgba(0, 0, 0, 0.7);
+padding: 0;
+}
+
+.card-img-overlay:hover {
+opacity: 1;
+}
+
+.card-text-overlay {
+position: absolute;
+bottom: 10px;
+left: 10px;
+color: #fff;
+}
+.movie-desc {
+    width: 100%; /* Adjust width as needed */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines to display */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* or "nowrap" based on requirements */
+}
+
+
