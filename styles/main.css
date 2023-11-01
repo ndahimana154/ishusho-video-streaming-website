@@ -1,5 +1,6 @@
 a {
     text-decoration: none;
+    font-size: 16px;
 }
 .custom-placeholder::placeholder {
     color: #fff;
@@ -12,15 +13,33 @@ body {
     background: linear-gradient(45deg,
 #2c3e50, #34495e, #2c3e50);
 }
-/* Add the following CSS to style the card */
-.movie-card {
+.latest-container {
+    width: 100vw;
+    margin: 10px;
+}
+.latest-container  h1{
+    text-transform: uppercase;
+font-weight: bold;
+color: #fff;
+font-size: 18px;
+}
+.latest-container .latest-movie-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.latest-container .latest-movie-row .movie-card {
 position: relative;
 overflow: hidden;
 padding: 0;
 margin: 0;
+width: 200px;
+margin: 5px;
+border-radius: 5px;
 }
 
-.card-img-overlay {
+.latest-container .latest-movie-row .card-img-overlay {
 position: absolute;
 top: 0;
 bottom: 0;
@@ -32,17 +51,23 @@ background-color: rgba(0, 0, 0, 0.7);
 padding: 0;
 }
 
-.card-img-overlay:hover {
+.latest-container .latest-movie-row .card-img-overlay:hover {
 opacity: 1;
 }
 
-.card-text-overlay {
+.latest-container .latest-movie-row .card-text-overlay {
 position: absolute;
 bottom: 10px;
 left: 10px;
 color: #fff;
 }
-.movie-desc {
+.latest-container .latest-movie-row .card-text-overlay h2 {
+    color: #dc3545;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+.latest-container .latest-movie-row .card-text-overlay .movie-desc {
     width: 100%; /* Adjust width as needed */
     display: -webkit-box;
     -webkit-line-clamp: 3; /* Number of lines to display */
@@ -50,6 +75,9 @@ color: #fff;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal; /* or "nowrap" based on requirements */
+    font-size: 14px;
 }
-
-
+.latest-container .latest-movie-row .card-text-overlay .row a {
+    /* color: #198754; */
+    color: #fff;
+}

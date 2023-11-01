@@ -39,7 +39,7 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                     <h1>
                         New movies
                     </h1>
-                    <form action="" method="post">
+                    <form action="" method="post" autocomplete="off">
                         <?php
                         if (isset($_POST['fetch_movie'])) {
                             $movie_id = $_POST['movie_id'];
@@ -70,7 +70,9 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                 </p>
                             <?php
                             } else {
-                                echo $movie_title = $data['title'];
+                                ?>
+                                <p class="alert alert-success">Movies is found.</p>
+                                <?php
                             }
                         }
                         if (isset($_POST['saveMovie'])) {
