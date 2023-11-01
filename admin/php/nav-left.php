@@ -6,7 +6,7 @@
             </h3>
             <ul>
                 <li>
-                    <a href="">
+                    <a href="admin-home.php">
                         <i class="fas fa-house"></i>
                         <span class="text">
                             Dashboard
@@ -21,7 +21,7 @@
             </h3>
             <ul>
                 <li>
-                    <a href="">
+                    <a href="admin-movies-list.php">
                         <i class="fas fa-house"></i>
                         <span class="text">
                             Movies list
@@ -29,8 +29,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <i class="fas fa-house"></i>
+                    <a href="admin-add-movie.php">
+                        <i class="fas fa-plus-circle"></i>
                         <span class="text">
                             Add movies
                         </span>

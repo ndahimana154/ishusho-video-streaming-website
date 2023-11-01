@@ -7,5 +7,6 @@
     else {
         $dataAdminInformations = mysqli_fetch_array($getAdminInformations);
         $actingAdminId = $dataAdminInformations['admin_id'];
+        $actingPassword = $dataAdminInformations['admin_pw'];
         $actingAdminProfile = $dataAdminInformations['admin_profile_pic'];
     }

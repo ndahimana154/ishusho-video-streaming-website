@@ -1,5 +1,3 @@
-
-
 <?php
 // Your TMDb API key
 $api_key = '7d283fea76fe291d82e6391d7e60fd25';

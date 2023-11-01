@@ -3,13 +3,14 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    font-size: 16px;
 }
 body {
     width: 100vw;
     overflow: hidden;
 }
 .main-container {
-    overflow: auto;
+    overflow:   hidden;
     width: 100vw;
     height: 100vh;
 }
@@ -111,6 +112,10 @@ body {
 }
 .main-container .center-section .right-contents {
     margin: 10px;
+    height: calc(100vh - 50px);
+    width: calc(100vw - 200px);
+    overflow: auto;
+
 }
 .main-container .center-section .right-contents .acting-user {
     padding: 10px;
@@ -145,3 +150,40 @@ body {
     color: #fff;
     text-transform: capitalize;
 }
+
+
+.main-container .center-section .right-contents .settings-cont {
+    margin: 10px;
+}
+.main-container .center-section .right-contents .settings-cont h1 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.main-container .center-section .right-contents .settings-cont .settings-box {
+    /* margin: 10px; */
+}
+.main-container .center-section .right-contents .settings-cont .settings-box form {
+    margin: 10px;
+    width: 500px;
+}
+.main-container .center-section .right-contents .settings-cont .settings-box h3 {
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.main-container .center-section .right-contents .all-interchange {
+    margin: 10px;
+    width: 1000px;
+}
+.main-container .center-section .right-contents .all-interchange h1 {
+    font-size: 22px;
+    color: #212529;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.main-container .center-section .right-contents .all-interchange form .row {
+    display: flex;
+    flex-direction: row;
+}
+/* .main-container .center-section .right-contents .all-interchange form .row  */
