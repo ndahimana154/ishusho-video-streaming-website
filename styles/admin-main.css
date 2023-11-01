@@ -1,0 +1,147 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body {
+    width: 100vw;
+    overflow: hidden;
+}
+.main-container {
+    overflow: auto;
+    width: 100vw;
+    height: 100vh;
+}
+.main-container header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    border-bottom: 2px solid #198754;
+}
+.main-container header .logo {
+    flex: 1;
+    padding: 10px;
+}
+.main-container header .logo a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+.main-container header .profile button {
+    background: transparent;
+    border: 0;
+    margin: 5px;
+}
+.main-container header .profile button i {
+    color: #000;
+}
+.main-container header .profile button img {
+    width: 40px;
+    height: 40px;
+}
+.main-container header .profile button ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-top: 4px;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    width: 200px;
+    display: none;
+    transition: 0.4s ease-in;
+    
+}
+.main-container header .profile button:hover ul {
+    display: flex;
+    position: fixed;
+    right: 5px;
+    top: 40px;
+}
+.main-container header .profile button ul li {
+    border-bottom: 1px solid #363e44;
+}
+.main-container header .profile button ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.main-container .center-section {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 50px);
+}
+.main-container .center-section .nav-controls {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+.main-container .center-section .nav-controls .nav-parts {
+    flex: 1;
+}
+.main-container .center-section .nav-controls .nav-part {
+    padding: 5px;
+    border-bottom: 1px solid #363e44;
+}
+.main-container .center-section .nav-controls .nav-part h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #212529;
+    text-transform: uppercase;
+    margin: 5px;
+}
+.main-container .center-section .nav-controls .nav-part ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    padding: 0;
+} 
+.main-container .center-section .nav-controls .nav-part ul li a {
+    text-decoration: none;
+    color: #198754;
+}
+.main-container .center-section .nav-controls .nav-copy {
+    text-align: center;
+    padding: 5px;
+}
+.main-container .center-section .right-contents {
+    margin: 10px;
+}
+.main-container .center-section .right-contents .acting-user {
+    padding: 10px;
+}
+.main-container .center-section .right-contents .acting-user h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.main-container .center-section .right-contents .total-boxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.main-container .center-section .right-contents .total-boxes .box {
+    background: #198754;
+    margin: 5px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 10px;
+    user-select: none;
+}
+.main-container .center-section .right-contents .total-boxes .box i {
+    color: #fff;
+    font-size: 20px;
+}
+.main-container .center-section .right-contents .total-boxes .box span {
+    color: #dcfc11;
+    font-size: 20px;
+}
+.main-container .center-section .right-contents .total-boxes .box p {
+    font-size: 24px;
+    color: #fff;
+    text-transform: capitalize;
+}
