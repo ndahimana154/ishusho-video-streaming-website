@@ -1,220 +1,233 @@
 a {
-    text-decoration: none;
-    font-size: 16px;
+  text-decoration: none;
+  font-size: 16px;
 }
 .custom-placeholder::placeholder {
-    color: #fff;
-    outline: 0;
+  color: #fff;
+  outline: 0;
 }
 input::-webkit-search-cancel-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 body {
-    background: linear-gradient(45deg,
-#2c3e50, #34495e, #2c3e50);
+  background: linear-gradient(45deg, #2c3e50, #34495e, #2c3e50);
 }
 .latest-container {
-    width: 100vw;
-    margin: 10px;
+  width: 100vw;
+  margin: 10px;
 }
-.latest-container  h1{
-    text-transform: uppercase;
-font-weight: bold;
-color: #fff;
-font-size: 18px;
+.latest-container h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+  font-size: 18px;
 }
 .latest-container .latest-movie-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .latest-container .latest-movie-row .movie-card {
-position: relative;
-overflow: hidden;
-padding: 0;
-margin: 0;
-width: 200px;
-margin: 5px;
-border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  width: 200px;
+  margin: 5px;
+  border-radius: 5px;
 }
 
 .latest-container .latest-movie-row .card-img-overlay {
-position: absolute;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-opacity: 0;
-transition: opacity 0.3s;
-background-color: rgba(0, 0, 0, 0.7);
-padding: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0;
 }
 
 .latest-container .latest-movie-row .card-img-overlay:hover {
-opacity: 1;
+  opacity: 1;
 }
 
 .latest-container .latest-movie-row .card-text-overlay {
-position: absolute;
-bottom: 10px;
-left: 10px;
-color: #fff;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #fff;
 }
 .latest-container .latest-movie-row .card-text-overlay h2 {
-    color: #dc3545;
-    font-weight: bold;
-    font-size: 18px;
-    text-transform: capitalize;
+  color: #dc3545;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: capitalize;
 }
 .latest-container .latest-movie-row .card-text-overlay .movie-desc {
-    width: 100%; /* Adjust width as needed */
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Number of lines to display */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal; /* or "nowrap" based on requirements */
-    font-size: 14px;
+  width: 100%; /* Adjust width as needed */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Number of lines to display */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* or "nowrap" based on requirements */
+  font-size: 14px;
 }
 .latest-container .latest-movie-row .card-text-overlay .row a {
-    /* color: #198754; */
-    color: #fff;
+  /* color: #198754; */
+  color: #fff;
 }
-
-
 
 .center-section {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    /* background: #dc3545; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* background: #dc3545; */
 }
 .center-section .left-video {
-    width: calc(100vw - 430px);
+  width: calc(100vw - 430px);
 }
 .center-section .left-video .video-display {
-    /* margin: 10px; */
-    padding: 10px;
-
+  /* margin: 10px; */
+  padding: 10px;
 }
 .center-section .left-video .video-display #player {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+  border-radius: 10px;
 }
 .center-section .left-video .video-display h2 {
-    color: #fff;
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 10px;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
 }
 .center-section .left-video .video-display .video-controls {
-    /* display: flex; */
-    /* flex-direction: row; */
+  /* display: flex; */
+  /* flex-direction: row; */
 }
 .center-section .left-video .video-display .video-controls h2 {
-    /* flex: 1; */
+  /* flex: 1; */
 }
 .center-section .left-video .video-display .video-controls .ctrlz {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
 }
 .center-section .left-video .video-display .video-controls .ctrlz a {
-    display: flex;
-    flex-direction: row;
-    background: #ddd9d9;
-    color: #2c3e50;
-    margin: 3px;
-    border-radius: 5px;
-    padding: 5px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  background: #ddd9d9;
+  color: #2c3e50;
+  margin: 3px;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
 }
 .center-section .left-video .video-display .video-controls .ctrlz a i {
-    padding: 5px;
+  padding: 5px;
 }
 .center-section .left-video .video-display .description {
-    margin-top: 5px;
-    color: #ddd9d9;
-    background: #151e26;
-    padding: 7px;
-    border-radius: 10px;
+  margin-top: 5px;
+  color: #ddd9d9;
+  background: #151e26;
+  padding: 7px;
+  border-radius: 10px;
 }
 .center-section .left-video .video-display .description h4 {
-    color: #ddd9d9;
-    font-weight: bold;
-    font-size: 16px;
+  color: #ddd9d9;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .center-section .recommended-vids {
-    width: 400px;
-    margin-top: 10px;
+  width: 400px;
+  margin-top: 10px;
 }
 .center-section .recommended-vids h1 {
-    color: #fff;
-    font-size: 18px;
-    font-weight: bolder;
-    padding: 10px;
-    text-transform: uppercase;
-    user-select: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bolder;
+  padding: 10px;
+  text-transform: uppercase;
+  user-select: none;
 }
 .center-section .recommended-vids .recommend-box {
 }
-.center-section .recommended-vids .recommend-box .recommend{
-    text-decoration: none;
-    background: #151e26;
-    border-radius: 10px;
-    color: #fff;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    margin: 5px;
+.center-section .recommended-vids .recommend-box .recommend {
+  text-decoration: none;
+  background: #151e26;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 5px;
 }
 .center-section .recommended-vids .recommend-box .recommend .left {
-    width: 180px;
+  width: 180px;
 }
 .center-section .recommended-vids .recommend-box .recommend .left img {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+  border-radius: 10px;
 }
 .center-section .recommended-vids .recommend-box .recommend .right {
-    padding-left: 10px;
-    width: calc(400px - 180px);
+  padding-left: 10px;
+  width: calc(400px - 180px);
 }
 .center-section .recommended-vids .recommend-box .recommend .right .m_name {
-    font-weight: bold;
-    color: #198754;
+  font-weight: bold;
+  color: #198754;
 }
-.center-section .recommended-vids .recommend-box .recommend .right .m_name:hover {
-    text-decoration: underline;
+.center-section
+  .recommended-vids
+  .recommend-box
+  .recommend
+  .right
+  .m_name:hover {
+  text-decoration: underline;
 }
 .center-section .recommended-vids .recommend-box .recommend .right p {
-    width: 100%; /* Adjust width as needed */
-    display: -webkit-box;
-    -webkit-line-clamp: 6; /* Number of lines to display */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal; /* or "nowrap" based on requirements */
-    font-size: 14px;
+  width: 100%; /* Adjust width as needed */
+  display: -webkit-box;
+  -webkit-line-clamp: 6; /* Number of lines to display */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* or "nowrap" based on requirements */
+  font-size: 14px;
 }
 .center-section .recommended-vids .recommend-box .recommend .right .buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
-.center-section .recommended-vids .recommend-box .recommend .right .buttons button {
-    background: transparent;
-    border: 0;
-    background: #fff;
-    color: #2c3e50;
-    flex: 1;
-    transition: 0.5s ease-in-out;
+.center-section
+  .recommended-vids
+  .recommend-box
+  .recommend
+  .right
+  .buttons
+  button {
+  background: transparent;
+  border: 0;
+  background: #fff;
+  color: #2c3e50;
+  flex: 1;
+  transition: 0.5s ease-in-out;
 }
-.center-section .recommended-vids .recommend-box .recommend .right .buttons button:hover {
-    background: #2c3e50;
-    color: #fff;
+.center-section
+  .recommended-vids
+  .recommend-box
+  .recommend
+  .right
+  .buttons
+  button:hover {
+  background: #2c3e50;
+  color: #fff;
 }

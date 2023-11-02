@@ -55,6 +55,16 @@ include('./php/global/server.php');
                 }
             }
 
+            // Updating the views count
+            $changeViewsCount = mysqli_query($server,"INSERT into movie_views
+                VALUES(null,'$video',1,now())
+            ");
+            // Counting the views
+            $getViewsCount = mysqli_query($server,"SELECT * from movie_views
+                WHERE movie = '$video'
+            ");
+            $viewsCount = mysqli_num_rows($getViewsCount);
+
         ?>
             <div class="center-section">
                 <div class="left-video">
@@ -68,7 +78,10 @@ include('./php/global/server.php');
                             </h2>
                             <div class="ctrlz">
                                 <a>
-                                    <i class="fa fa-eye"></i> <span>100</span>
+                                    <i class="fa fa-eye"></i> 
+                                    <span>
+                                        <?php echo $viewsCount; ?>
+                                    </span>
                                 </a>
 
                                 <a>
@@ -124,9 +137,15 @@ include('./php/global/server.php');
                                         <?php echo $dataRecommendationsVideos['movie_description']; ?>
                                     </p>
                                     <div class="buttons">
+                                        <?php
+                                            $recommendId = $dataRecommendationsVideos['movie_id'];
+                                            $getRecommendViews = mysqli_query($server,"SELECT * from movie_views 
+                                                WHERE movie = '$recommendId'
+                                            ");
+                                        ?>
                                         <button>
                                             <i class="fa fa-eye"></i>
-                                            <span>100</span>
+                                            <span><?php echo mysqli_num_rows($getRecommendViews); ?></span>
                                         </button>
                                         <button>
                                             <i class="fa fa-thumbs-up"></i>
