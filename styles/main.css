@@ -81,3 +81,140 @@ color: #fff;
     /* color: #198754; */
     color: #fff;
 }
+
+
+
+.center-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* background: #dc3545; */
+}
+.center-section .left-video {
+    width: calc(100vw - 430px);
+}
+.center-section .left-video .video-display {
+    /* margin: 10px; */
+    padding: 10px;
+
+}
+.center-section .left-video .video-display #player {
+    width: 100%;
+    border-radius: 10px;
+}
+.center-section .left-video .video-display h2 {
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+}
+.center-section .left-video .video-display .video-controls {
+    /* display: flex; */
+    /* flex-direction: row; */
+}
+.center-section .left-video .video-display .video-controls h2 {
+    /* flex: 1; */
+}
+.center-section .left-video .video-display .video-controls .ctrlz {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.center-section .left-video .video-display .video-controls .ctrlz a {
+    display: flex;
+    flex-direction: row;
+    background: #ddd9d9;
+    color: #2c3e50;
+    margin: 3px;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+.center-section .left-video .video-display .video-controls .ctrlz a i {
+    padding: 5px;
+}
+.center-section .left-video .video-display .description {
+    margin-top: 5px;
+    color: #ddd9d9;
+    background: #151e26;
+    padding: 7px;
+    border-radius: 10px;
+}
+.center-section .left-video .video-display .description h4 {
+    color: #ddd9d9;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.center-section .recommended-vids {
+    width: 400px;
+    margin-top: 10px;
+}
+.center-section .recommended-vids h1 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 10px;
+    text-transform: uppercase;
+    user-select: none;
+}
+.center-section .recommended-vids .recommend-box {
+}
+.center-section .recommended-vids .recommend-box .recommend{
+    text-decoration: none;
+    background: #151e26;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 5px;
+}
+.center-section .recommended-vids .recommend-box .recommend .left {
+    width: 180px;
+}
+.center-section .recommended-vids .recommend-box .recommend .left img {
+    width: 100%;
+    border-radius: 10px;
+}
+.center-section .recommended-vids .recommend-box .recommend .right {
+    padding-left: 10px;
+    width: calc(400px - 180px);
+}
+.center-section .recommended-vids .recommend-box .recommend .right .m_name {
+    font-weight: bold;
+    color: #198754;
+}
+.center-section .recommended-vids .recommend-box .recommend .right .m_name:hover {
+    text-decoration: underline;
+}
+.center-section .recommended-vids .recommend-box .recommend .right p {
+    width: 100%; /* Adjust width as needed */
+    display: -webkit-box;
+    -webkit-line-clamp: 6; /* Number of lines to display */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* or "nowrap" based on requirements */
+    font-size: 14px;
+}
+.center-section .recommended-vids .recommend-box .recommend .right .buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.center-section .recommended-vids .recommend-box .recommend .right .buttons button {
+    background: transparent;
+    border: 0;
+    background: #fff;
+    color: #2c3e50;
+    flex: 1;
+    transition: 0.5s ease-in-out;
+}
+.center-section .recommended-vids .recommend-box .recommend .right .buttons button:hover {
+    background: #2c3e50;
+    color: #fff;
+}
