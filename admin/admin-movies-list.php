@@ -33,14 +33,43 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                 <?php
                 include("./php/acting-user.php");
                 ?>
-                
-                <div class="movies-list">
+
+                <div class="all-interchange">
                     <h1>
                         Movies list
                     </h1>
+                    <?php
+                    if (isset($_GET['delete'])) {
+                        if (!isset($_GET['v'])) {
+                    ?>
+                            <p class="alert alert-danger">
+                                No video sent to the server!
+                            </p>
+                            <?php
+                        } else {
+                            $videoToDelete = $_GET['v'];
+                            $deleteVideo = mysqli_query($server, "DELETE from movies
+                                    WHERE movie_id = '$videoToDelete'
+                                ");
+                            if (!$deleteVideo) {
+                            ?>
+                                <p class="alert alert-danger">
+                                    Video is not deleted.
+                                </p>
+                            <?php
+                            } else {
+                            ?>
+                                <p class="alert alert-success">
+                                    Video is deleted successfully
+                                </p>
+                    <?php
+                            }
+                        }
+                    }
+                    ?>
                     <table class="table table-responsive table-hover">
                         <thead>
-                            <tr>
+                            <tr class="bg-success text-light">
                                 <th>
                                     #
                                 </th>
@@ -51,16 +80,59 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                     Movie description
                                 </th>
                                 <th>
+                                    Views count
+                                </th>
+                                <th>
                                     Actions
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td colspan="10">
-                                    no values...
-                                </td>
-                            </tr>
+                            <?php
+                            $getMovies = mysqli_query($server, "SELECT * from
+                                    movies ORDER BY CAST(movie_id AS UNSIGNED)
+                                ");
+                            if (mysqli_num_rows($getMovies) < 1) {
+                            ?>
+                                <tr>
+                                    <td colspan="10">
+                                        no values...
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                            while ($dataMovies = mysqli_fetch_array($getMovies)) {
+                            ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $video = $dataMovies['movie_id']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $dataMovies['movie_name']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $dataMovies['movie_description']; ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $getMovieViewsCount = mysqli_query($server, "SELECT * from 
+                                                    movie_views WHERE movie = '$video'
+                                                ");
+                                        echo mysqli_num_rows($getMovieViewsCount);
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <a href="admin-edit-movie.php?edit&v=<?php echo $video; ?>" class="">
+                                            <i class="fa fa-edit text-primary"></i>
+                                        </a>
+                                        <a href="?delete&v=<?php echo $video; ?>" onclick="return confirm('Are you sure to delete?');">
+                                            <i class="fa fa-trash text-danger"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>

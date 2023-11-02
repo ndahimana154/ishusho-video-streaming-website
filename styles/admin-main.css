@@ -5,6 +5,13 @@
     text-decoration: none;
     font-size: 16px;
 }
+button {
+    border: 0;
+    background: transparent;
+}
+a {
+    text-decoration: none;
+}
 body {
     width: 100vw;
     overflow: hidden;
@@ -186,4 +193,7 @@ body {
     display: flex;
     flex-direction: row;
 }
-/* .main-container .center-section .right-contents .all-interchange form .row  */
+.main-container .center-section .right-contents .all-interchange table thead tr {
+    position: sticky;
+    top: 0px;
+}

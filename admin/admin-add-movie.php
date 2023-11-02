@@ -70,9 +70,9 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                 </p>
                             <?php
                             } else {
-                                ?>
+                            ?>
                                 <p class="alert alert-success">Movies is found.</p>
-                                <?php
+                            <?php
                             }
                         }
                         if (isset($_POST['saveMovie'])) {
@@ -126,11 +126,11 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                     Movie ID
                                 </label>
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" name="movie_id" placeholder="Recipient's username" value="<?php
-                                                                                                                                        if (isset($_POST['fetch_movie'])) {
-                                                                                                                                            echo $movie_id;
-                                                                                                                                        }
-                                                                                                                                        ?>">
+                                    <input type="text" class="form-control" name="movie_id" placeholder="Movie ID.." value="<?php
+                                                                                                                            if (isset($_POST['fetch_movie'])) {
+                                                                                                                                echo $movie_id;
+                                                                                                                            }
+                                                                                                                            ?>">
                                     <button class="input-group-text" type="submit" name="fetch_movie" id="basic-addon2">
                                         <i class="fa fa-refresh"></i>
                                     </button>
