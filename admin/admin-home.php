@@ -35,48 +35,32 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                 ?>
                 <div class="total-boxes">
                     <div class="box">
+                        <?php
+                        $getTotalMovies = mysqli_query($server, "SELECT
+                                * from movies
+                            ");
+                        ?>
                         <i class="fa fa-tv"></i>
                         <span>
-                            204
+                            <?php echo mysqli_num_rows($getTotalMovies); ?>
                         </span>
                         <p>
                             Total movies
                         </p>
                     </div>
                     <div class="box">
-                        <i class="fa fa-tv"></i>
+                        <?php
+                        $getTotalViews = mysqli_query($server, "SELECT 
+                                * from
+                                movie_views 
+                            ");
+                        ?>
+                        <i class="fa fa-eye"></i>
                         <span>
-                            204
+                            <?php echo mysqli_num_rows($getTotalViews); ?>
                         </span>
                         <p>
-                            Total movies
-                        </p>
-                    </div>
-                    <div class="box">
-                        <i class="fa fa-tv"></i>
-                        <span>
-                            204
-                        </span>
-                        <p>
-                            Total movies
-                        </p>
-                    </div>
-                    <div class="box">
-                        <i class="fa fa-tv"></i>
-                        <span>
-                            204
-                        </span>
-                        <p>
-                            Total movies
-                        </p>
-                    </div>
-                    <div class="box">
-                        <i class="fa fa-tv"></i>
-                        <span>
-                            204
-                        </span>
-                        <p>
-                            Total movies
+                            Total views
                         </p>
                     </div>
                 </div>
