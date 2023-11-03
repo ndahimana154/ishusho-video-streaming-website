@@ -128,6 +128,9 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                         <a href="?delete&v=<?php echo $video; ?>" onclick="return confirm('Are you sure to delete?');">
                                             <i class="fa fa-trash text-danger"></i>
                                         </a>
+                                        <a href="../watch.php?v=<?php echo $video; ?>" target="_blank">
+                                            <i class="fa fa-external-link text-dark"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             <?php
