@@ -24,6 +24,10 @@ include('./php/global/server.php');
 <body>
     <?php
     include("./php/client/nav-bar.php");
+    ?>
+    <!-- Search results section -->
+    <div id="searchResults"></div>
+    <?php
     if (!isset($_GET['v'])) {
     ?>
         <p class="alert alert-danger">
@@ -162,20 +166,17 @@ include('./php/global/server.php');
         }
     }
     ?>
+    <!-- Jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- End latest movies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Include PlyR.io CDN -->
     <script src="https://cdn.plyr.io/3.6.7/plyr.js"></script>
-
-    <script>
-        const player = new Plyr('#my-video', {
-            quality: {
-                default: '720', // Set the default quality
-                options: ['480', '720', '1080'] // Define available quality options
-            }
-        });
-    </script>
+    <!-- Clients Watching Movi Controls from Plyri.io -->
+    <script src="./js/clientsWatchControls.js"></script>
+    <!-- Include search.js -->
+    <script src="./js/search.js"></script>
 </body>
 
 </html>

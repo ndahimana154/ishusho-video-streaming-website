@@ -7,7 +7,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="d-flex mx-auto w-50" role="search">
-                <input class="form-control border border-success bg-transparent text-light custom-placeholder" type="search" placeholder="Type to search..." aria-label="Search">
+                <input id="searchField" class="form-control border border-success bg-transparent text-light custom-placeholder" type="search" placeholder="Type to search..." aria-label="Search">
                 <button class="btn btn-outline-success ms-2" type="submit">
                     <i class="fas fa-search"></i>
                 </button>

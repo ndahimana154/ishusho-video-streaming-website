@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 02, 2023 at 11:53 AM
+-- Generation Time: Nov 03, 2023 at 03:30 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -73,7 +73,7 @@ INSERT INTO `movies` (`movie_id`, `movie_name`, `movie_description`, `movie_cate
 ('5657', 'The Worm Eaters', 'Herman Umgar, a German hermit, has an ability to communicate with worms. One day the mayor of the town runs him off his property, so in revenge he plants worms in everybody\'s food. However, these worms are a special breed of mutant worms from the Red Tide, and when the people eat them they are transformed into giant worms themselves. These worm-people also become Herman\'s slaves. What will the remaining do?', 'Comedy, Horror', 'https://image.tmdb.org/t/p/w500/aeu5VtuXk3PUjHBAoA0q10eckcp.jpg', 'https://www.youtube.com/watch?v=Xxt4bcZQKl8', '', '', '1977-04-12', '2023-11-01 07:11:48', 1),
 ('567', 'Rear Window ', 'A wheelchair-bound photographer spies on his neighbors from his apartment window and becomes convinced one of them has committed murder.', 'Thriller, Mystery', 'https://image.tmdb.org/t/p/w500/ILVF0eJxHMddjxeQhswFtpMtqx.jpg', 'https://www.youtube.com/watch?v=n0RLdU5bDF4', '', '', '1954-08-01', '2023-11-02 11:11:39', 1),
 ('6554', 'The Architects', 'The architect Daniel Brenner is in his late thirties when he receives his first challenging and lucrative commission: to design a cultural center for a satellite town in East-Berlin. He accepts the offer under the condition that he gets to choose who he works with. This way, he reunites with former colleagues and friends - most of them architects or students of architecture who have since chosen a different profession due to personal restraint or economic confinement. Together, they develop a concept which they hope will be more appealing to the public than the conventional and dull constructions common to the German Democratic Republic. However, their ambitious plans are once and again foiled by their conservative supervisors. As frustration grows, Daniel has trouble keeping his career in balance with his family-life: his wife Wanda wants to leave for West-Germany.', 'Drama', 'https://image.tmdb.org/t/p/w500/sLEv1bGBBM2r8JoW5174nuuGmnB.jpg', '', '', '', '1990-06-21', '2023-11-02 11:11:53', 1),
-('768', 'From Hell', 'Frederick Abberline is an opium-huffing inspector from Scotland Yard who falls for one of Jack the Ripper\'s prostitute targets in this Hughes brothers adaption of a graphic novel that posits the Ripper\'s true identity.', 'Horror, Mystery, Thriller', 'https://image.tmdb.org/t/p/w500/t2WpWM8nBO4sULXr2bDfNEt4qgr.jpg', 'https://www.youtube.com/watch?v=7gJQRKQjvrU', '', '', '2001-02-08', '2023-11-02 11:12:34', 1),
+('768', 'From Hell', 'Frederick Abberline is an opium-huffing inspector from Scotland Yard who falls for one of Jack the Ripper\'s prostitute targets in this Hughes brothers adaption of a graphic novel that posits the Ripper\'s true identity.', 'Horror, Mystery, Thriller', 'https://image.tmdb.org/t/p/w500/t2WpWM8nBO4sULXr2bDfNEt4qgr.jpg', 'https://www.youtube.com/watch?v=7gJQRKQjvrU', 'https://www.gasape.com/upload/videos/2023/09/IWHWX2Qxoo2TWYoVwHWX_26_cfdb8bd0d42dd2f9824dacc71e7e9ba0_video_720p_converted.mp4', 'https://www.gasape.com/upload/videos/2023/09/IWHWX2Qxoo2TWYoVwHWX_26_cfdb8bd0d42dd2f9824dacc71e7e9ba0_video_480p_converted.mp4', '2001-02-08', '2023-11-02 11:12:34', 1),
 ('9900', 'Grandma\'s Boy', 'Even though he\'s 35, Alex acts more like he\'s 13, spending his days as the world\'s oldest video game tester and his evenings developing the next big Xbox game. But when he gets kicked out of his apartment, he\'s forced to move in with his grandmother.', 'Comedy', 'https://image.tmdb.org/t/p/w500/zaGIcb0hXxUbuyIZ0j7uCmbO1li.jpg', 'https://www.youtube.com/watch?v=FxyBUJ-hfRg', '', '', '2006-01-06', '2023-11-02 11:23:57', 1);
 
 -- --------------------------------------------------------
@@ -96,7 +96,8 @@ CREATE TABLE `movies_crud_log` (
 
 INSERT INTO `movies_crud_log` (`#`, `movie`, `action`, `action_time`, `action_by`) VALUES
 (1, '567', 'UPDATING', '2023-11-02 12:52:56', 1),
-(2, '567', 'UPDATING', '2023-11-02 12:52:58', 1);
+(2, '567', 'UPDATING', '2023-11-02 12:52:58', 1),
+(3, '768', 'UPDATING', '2023-11-03 09:18:08', 1);
 
 -- --------------------------------------------------------
 
@@ -123,7 +124,36 @@ INSERT INTO `movie_views` (`#`, `movie`, `counter`, `datetime`) VALUES
 (5, '5657', 1, '2023-11-02 11:38:46'),
 (6, '1064024', 1, '2023-11-02 11:38:50'),
 (7, '143', 1, '2023-11-02 11:38:56'),
-(8, '143', 1, '2023-11-02 11:59:17');
+(8, '143', 1, '2023-11-02 11:59:17'),
+(9, '143', 1, '2023-11-03 08:49:34'),
+(10, '768', 1, '2023-11-03 09:09:01'),
+(11, '768', 1, '2023-11-03 09:24:58'),
+(12, '768', 1, '2023-11-03 09:26:46'),
+(13, '768', 1, '2023-11-03 09:36:38'),
+(14, '768', 1, '2023-11-03 09:42:35'),
+(15, '768', 1, '2023-11-03 09:44:12'),
+(16, '768', 1, '2023-11-03 09:44:41'),
+(17, '768', 1, '2023-11-03 09:48:23'),
+(18, '768', 1, '2023-11-03 09:58:10'),
+(19, '768', 1, '2023-11-03 09:58:40'),
+(20, '768', 1, '2023-11-03 09:59:05'),
+(21, '768', 1, '2023-11-03 10:00:25'),
+(22, '768', 1, '2023-11-03 10:01:17'),
+(23, '768', 1, '2023-11-03 10:01:20'),
+(24, '5657', 1, '2023-11-03 10:01:53'),
+(25, '9900', 1, '2023-11-03 10:03:28'),
+(26, '9900', 1, '2023-11-03 10:07:47'),
+(27, '9900', 1, '2023-11-03 10:42:13'),
+(28, '9900', 1, '2023-11-03 10:42:49'),
+(29, '9900', 1, '2023-11-03 10:47:43'),
+(30, '9900', 1, '2023-11-03 10:53:42'),
+(31, '9900', 1, '2023-11-03 10:57:19'),
+(32, '9900', 1, '2023-11-03 10:59:01'),
+(33, '567', 1, '2023-11-03 10:59:13'),
+(34, '567', 1, '2023-11-03 10:59:23'),
+(35, '768', 1, '2023-11-03 16:26:20'),
+(36, '768', 1, '2023-11-03 16:27:00'),
+(37, '32222', 1, '2023-11-03 16:29:48');
 
 --
 -- Indexes for dumped tables
@@ -171,13 +201,13 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `movies_crud_log`
 --
 ALTER TABLE `movies_crud_log`
-  MODIFY `#` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `#` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `movie_views`
 --
 ALTER TABLE `movie_views`
-  MODIFY `#` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `#` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- Constraints for dumped tables

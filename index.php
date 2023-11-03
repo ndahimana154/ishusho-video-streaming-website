@@ -18,8 +18,10 @@ include('./php/global/server.php');
 
 <body>
   <?php
-  include("./php/client/nav-bar.php")
-  ?>
+  include("./php/client/nav-bar.php");
+    ?>
+  <!-- Search results section -->
+  <div id="searchResults"></div>
 
   <!-- Hero -->
   <!-- <div id="carouselExampleCaptions" class="carousel  container slide mt-2" data-bs-ride="carousel">
@@ -114,11 +116,14 @@ include('./php/global/server.php');
     </div>
   </div>
   <!-- End latest movies -->
+  <!-- Jquery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Include bootstrapp CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
+  <!-- Include search.js -->
+  <script src="./js/search.js"></script>
 
-
-  </style>
 </body>
 
 </html>
