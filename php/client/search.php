@@ -27,7 +27,7 @@ if (isset($_POST['s'])) {
             while ($dataSearchResults = mysqli_fetch_array($getSearchResults)) {
             ?>
                 <div class="box">
-                    <a href="">
+                    <a href="watch.php?v=<?php echo $dataSearchResults['movie_id'] ?>">
                         <i class="fa fa-film"></i>
                         <p>
                             <span>
