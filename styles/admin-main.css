@@ -143,6 +143,7 @@ body {
     padding: 5px;
     border-radius: 10px;
     user-select: none;
+    cursor: pointer;
 }
 .main-container .center-section .right-contents .total-boxes .box i {
     color: #fff;
@@ -151,6 +152,7 @@ body {
 .main-container .center-section .right-contents .total-boxes .box span {
     color: #dcfc11;
     font-size: 20px;
+    text-decoration: none;
 }
 .main-container .center-section .right-contents .total-boxes .box p {
     font-size: 24px;

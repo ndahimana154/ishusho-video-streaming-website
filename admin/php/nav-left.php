@@ -22,7 +22,7 @@
             <ul>
                 <li>
                     <a href="admin-movies-list.php">
-                        <i class="fas fa-house"></i>
+                        <i class="fas fa-film"></i>
                         <span class="text">
                             Movies list
                         </span>
@@ -33,14 +33,6 @@
                         <i class="fas fa-plus-circle"></i>
                         <span class="text">
                             Add movies
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="fas fa-house"></i>
-                        <span class="text">
-                            Movies list
                         </span>
                     </a>
                 </li>

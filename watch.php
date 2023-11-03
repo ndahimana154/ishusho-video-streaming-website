@@ -12,8 +12,8 @@ include('./php/global/server.php');
     <link rel="stylesheet" href="assets/fontawesome-free-6.4.2-web/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Include Plyr CSS -->
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
+    <!-- Plyr.io CDN -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.7/plyr.css" />
 
 
     <link rel="stylesheet" href="./styles/main.css">
@@ -44,23 +44,14 @@ include('./php/global/server.php');
         <?php
         } else {
             $dataVideoExistence = mysqli_fetch_array($checkVideoExistence);
-            $youtubeLink = $dataVideoExistence['movie_url'];
-            // Extract the video ID from the link
-            $videoId = '';
-            $parsedUrl = parse_url($youtubeLink);
-            if (isset($parsedUrl['query'])) {
-                parse_str($parsedUrl['query'], $query);
-                if (isset($query['v'])) {
-                    $videoId = $query['v'];
-                }
-            }
-
+            $video720p = $dataVideoExistence['url720'];
+            $video480p = $dataVideoExistence['url480'];
             // Updating the views count
-            $changeViewsCount = mysqli_query($server,"INSERT into movie_views
+            $changeViewsCount = mysqli_query($server, "INSERT into movie_views
                 VALUES(null,'$video',1,now())
             ");
             // Counting the views
-            $getViewsCount = mysqli_query($server,"SELECT * from movie_views
+            $getViewsCount = mysqli_query($server, "SELECT * from movie_views
                 WHERE movie = '$video'
             ");
             $viewsCount = mysqli_num_rows($getViewsCount);
@@ -69,16 +60,20 @@ include('./php/global/server.php');
             <div class="center-section">
                 <div class="left-video">
                     <div class="video-display">
-                        <div id="player">
-                            <iframe src="https://www.youtube.com/embed/<?php echo $videoId ?>?si=uVoE1p9JnySMhtTF" class="movie_displayer" poster="<?php echo $dataVideoExistence['movie_poster']; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
+                        <video id="my-video" controls>
+                            <source src="<?php echo $video720p; ?>" type="video/mp4" data-size="480" />
+                            <source src="<?php echo $video480p; ?>" type="video/mp4" data-size="720" />
+                        </video>
+
+
+
                         <div class="video-controls">
                             <h2>
                                 <?php echo $dataVideoExistence['movie_name']; ?>
                             </h2>
                             <div class="ctrlz">
                                 <a>
-                                    <i class="fa fa-eye"></i> 
+                                    <i class="fa fa-eye"></i>
                                     <span>
                                         <?php echo $viewsCount; ?>
                                     </span>
@@ -120,8 +115,7 @@ include('./php/global/server.php');
                     while ($dataRecommendationsVideos = mysqli_fetch_array($getRecommendedOnes)) {
                     ?>
                         <div class="recommend-box">
-                            <a href="watch.php?v=<?php echo $dataRecommendationsVideos['movie_id'] ?>"
-                                class="recommend">
+                            <a href="watch.php?v=<?php echo $dataRecommendationsVideos['movie_id'] ?>" class="recommend">
                                 <div class="left">
                                     <img src="<?php echo $dataRecommendationsVideos['movie_poster']; ?>" alt="">
                                 </div>
@@ -138,8 +132,8 @@ include('./php/global/server.php');
                                     </p>
                                     <div class="buttons">
                                         <?php
-                                            $recommendId = $dataRecommendationsVideos['movie_id'];
-                                            $getRecommendViews = mysqli_query($server,"SELECT * from movie_views 
+                                        $recommendId = $dataRecommendationsVideos['movie_id'];
+                                        $getRecommendViews = mysqli_query($server, "SELECT * from movie_views 
                                                 WHERE movie = '$recommendId'
                                             ");
                                         ?>
@@ -171,11 +165,16 @@ include('./php/global/server.php');
 
     <!-- End latest movies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Include Plyr JS -->
-    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Include PlyR.io CDN -->
+    <script src="https://cdn.plyr.io/3.6.7/plyr.js"></script>
 
     <script>
-        const player = new Plyr('#player');
+        const player = new Plyr('#my-video', {
+            quality: {
+                default: '720', // Set the default quality
+                options: ['480', '720', '1080'] // Define available quality options
+            }
+        });
     </script>
 </body>
 

@@ -34,7 +34,7 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                 include("./php/acting-user.php");
                 ?>
                 <div class="total-boxes">
-                    <div class="box">
+                    <div class="box" onclick="window.location.href='admin-add-movie.php'">
                         <?php
                         $getTotalMovies = mysqli_query($server, "SELECT
                                 * from movies
@@ -63,37 +63,21 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                             Total views
                         </p>
                     </div>
+                    <div class="box" onclick="window.location.href='admin-users-list.php'">
+                        <?php
+                        $getTotalUsers = mysqli_query($server, "SELECT * from admins");
+
+                        ?>
+                        <i class="fa fa-user"></i>
+                        <span>
+                            <?php echo mysqli_num_rows($getTotalUsers); ?>
+                        </span>
+                        <p>
+                            Total users
+                        </p>
+                    </div>
                 </div>
-                <div class="recent-movies">
-                    <h1>
-                        Recent movies
-                    </h1>
-                    <table class="table table-responsive table-hover">
-                        <thead>
-                            <tr>
-                                <th>
-                                    #
-                                </th>
-                                <th>
-                                    Movie name
-                                </th>
-                                <th>
-                                    Movie description
-                                </th>
-                                <th>
-                                    Actions
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td colspan="10">
-                                    no values...
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+
             </div>
         </section>
     </div>
