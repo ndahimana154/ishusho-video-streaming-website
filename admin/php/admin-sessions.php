@@ -8,4 +8,5 @@ if (mysqli_num_rows($getAdminInformations) < 1) {
     $actingAdminId = $dataAdminInformations['admin_id'];
     $actingPassword = $dataAdminInformations['admin_pw'];
     $actingAdminProfile = $dataAdminInformations['admin_profile_pic'];
+    $actingAdminStatus = $dataAdminInformations['admin_status'];
 }

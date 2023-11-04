@@ -38,22 +38,36 @@
                 </li>
             </ul>
         </div>
-        <div class="nav-part">
-            <h3>
-                FEEDBACKS
-            </h3>
-            <ul>
-                <li>
-                    <a href="">
-                        <i class="fas fa-house"></i>
-                        <span class="text">
-                            Feedback lists
-                        </span>
-                    </a>
-                </li>
+        <?php
+        if ($actingAdminStatus == 'Administrator') {
+        ?>
+            <div class="nav-part">
+                <h3>
+                    Users
+                </h3>
+                <ul>
+                    <li>
+                        <a href="admin-users-list.php">
+                            <i class="fas fa-user-group"></i>
+                            <span class="text">
+                                Users List
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-add-users.php">
+                            <i class="fa fa-plus-circle"></i>
+                            <span>
+                                Add users
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        <?php
+        }
+        ?>
 
-            </ul>
-        </div>
     </div>
     <div class="nav-copy">
         &copy; ISHUSHO

@@ -66,6 +66,11 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                         admin_un = '$username'
                                         WHERE admin_id = '$actingAdminId'
                                     ");
+                                    ?>
+                                    <p class="alert alert-success">
+                                        Username is updated successfully.
+                                    </p>
+                                    <?php
                                 }
                             }
                             ?>
