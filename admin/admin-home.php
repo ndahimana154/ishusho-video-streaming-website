@@ -34,7 +34,7 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                 include("./php/acting-user.php");
                 ?>
                 <div class="total-boxes">
-                    <div class="box" onclick="window.location.href='admin-add-movie.php'">
+                    <div class="box" onclick="window.location.href='./admin-movies-list.php'">
                         <?php
                         $getTotalMovies = mysqli_query($server, "SELECT
                                 * from movies
