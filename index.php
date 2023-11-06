@@ -107,8 +107,8 @@ include('./php/global/server.php');
       ?>
     </div>
     <div class="">
-      <div class="d-grid gap-2  mx-auto">
-        <button class="btn btn-primary" type="button">
+      <div class="m-2 text-center">
+        <button class="btn btn-primary mx-auto" type="button">
           <i class="fas fa-caret-down me-md-2"></i>
           Explore more...
         </button>

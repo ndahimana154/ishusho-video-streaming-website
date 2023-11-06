@@ -3,7 +3,7 @@ a {
   font-size: 16px;
 }
 .custom-placeholder::placeholder {
-  color: #fff;
+  color: #000;
   outline: 0;
 }
 input::-webkit-search-cancel-button {
