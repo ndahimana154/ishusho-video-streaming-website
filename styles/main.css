@@ -89,9 +89,9 @@ body {
 }
 .center-section .left-video {
   width: calc(100vw - 430px);
+  margin-top: 20px;
 }
 .center-section .left-video .video-display {
-  /* margin: 10px; */
   padding: 10px;
 }
 .center-section .left-video .video-display #my-video {
@@ -103,7 +103,6 @@ body {
   font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;
-  padding: 10px;
 }
 .center-section .left-video .video-display .video-controls {
   /* display: flex; */
@@ -220,6 +219,7 @@ body {
   color: #2c3e50;
   flex: 1;
   transition: 0.5s ease-in-out;
+  margin-bottom: 10px;
 }
 .center-section
   .recommended-vids
@@ -236,7 +236,6 @@ body {
   width: 100vw;
   background: #151e26;
   padding: 10px;
-
 }
 .searchResults h2 {
   color: #fff;
@@ -252,18 +251,63 @@ body {
   display: flex;
   flex-direction: column;
 }
-.searchResults .results-boxes  .box a {
+.searchResults .results-boxes .box a {
   color: #a3a3a3;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   margin: 10px;
-  border-bottom: 2px solid #198754 ;
+  border-bottom: 2px solid #198754;
 }
-.searchResults .results-boxes  .box a i {
+.searchResults .results-boxes .box a i {
   padding: 3px;
 }
-.searchResults .results-boxes  .box a p {
+.searchResults .results-boxes .box a p {
   /* padding: 8px; */
   margin-left: 10px;
+}
+
+@media (max-width: 810px) {
+  .latest-container .latest-movie-row .movie-card {
+    width: 30%;
+    margin: 10px;
+  }
+  .center-section {
+    flex-direction: column;
+  }
+  .center-section .left-video {
+    width: 100vw;
+  }
+  .center-section .recommended-vids {
+    width: 100vw;
+  }
+  .center-section .recommended-vids .recommend-box {
+    width: 100%;
+  }
+  .center-section .recommended-vids .recommend-box a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .center-section .recommended-vids .recommend-box a .left {
+    flex: 1;
+  }
+  .center-section .recommended-vids .recommend-box .right {
+    flex: 3;
+  }
+  /* .center-section .recommended-vids .recommend-box .recommend .right p {
+    display: block;
+    overflow: auto;
+    text-overflow: unset;
+  } */
+}
+
+@media (max-width: 550px) {
+  .latest-container .latest-movie-row .movie-card {
+    width: 100%;
+  }
+  .center-section .recommended-vids .recommend-box a {
+    display: flex;
+    flex-direction: column;
+  }
 }

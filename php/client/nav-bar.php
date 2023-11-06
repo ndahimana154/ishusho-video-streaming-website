@@ -2,8 +2,8 @@
 <nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid">
         <a href="index.php" class="navbar-brand text-light fs-3 fw-bold me-auto" href="#">IS<span class="text-danger">HUS</span>HO</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon text-white"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="d-flex mx-auto w-50" role="search">

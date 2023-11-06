@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 03, 2023 at 03:30 PM
+-- Generation Time: Nov 04, 2023 at 07:07 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -40,7 +40,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`admin_id`, `admin_un`, `admin_pw`, `admin_profile_pic`, `admin_status`) VALUES
-(1, 'admin', 'admin1234', 'No profile', '');
+(1, 'admin', 'admin', 'No profile', 'Administrator'),
+(3, 'shema', '1234', 'No profile', 'Standard');
 
 -- --------------------------------------------------------
 
@@ -153,7 +154,12 @@ INSERT INTO `movie_views` (`#`, `movie`, `counter`, `datetime`) VALUES
 (34, '567', 1, '2023-11-03 10:59:23'),
 (35, '768', 1, '2023-11-03 16:26:20'),
 (36, '768', 1, '2023-11-03 16:27:00'),
-(37, '32222', 1, '2023-11-03 16:29:48');
+(37, '32222', 1, '2023-11-03 16:29:48'),
+(38, '143', 1, '2023-11-03 16:46:14'),
+(39, '9900', 1, '2023-11-03 17:36:09'),
+(40, '9900', 1, '2023-11-03 18:02:35'),
+(41, '9900', 1, '2023-11-03 22:17:43'),
+(42, '1064024', 1, '2023-11-04 19:49:27');
 
 --
 -- Indexes for dumped tables
@@ -195,7 +201,7 @@ ALTER TABLE `movie_views`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `movies_crud_log`
@@ -207,7 +213,7 @@ ALTER TABLE `movies_crud_log`
 -- AUTO_INCREMENT for table `movie_views`
 --
 ALTER TABLE `movie_views`
-  MODIFY `#` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `#` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- Constraints for dumped tables
