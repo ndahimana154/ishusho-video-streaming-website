@@ -4,7 +4,7 @@ if (isset($_POST['s'])) {
     $searchValue = $_POST['s'];
 ?>
     <div class="searchResults">
-        <h2>
+        <h2 class="p-2">
             Search results "<span><?php echo $searchValue; ?></span>"
         </h2>
         <div class="results-boxes">

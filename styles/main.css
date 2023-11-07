@@ -347,7 +347,7 @@ footer .dev a {
     flex-direction: column;
   }
   .center-section .left-video {
-    /* width: 100vw; */
+    width: 100vw;
   }
   .center-section .recommended-vids {
     width: 100vw;
