@@ -60,6 +60,15 @@ include('./php/global/server.php');
             ");
             $viewsCount = mysqli_num_rows($getViewsCount);
 
+            // If the like button is clicked
+            if(isset($_GET['like'])) {
+                $videoToLike = $_GET['like'];
+                $insertLike = mysqli_query($server,"INSERT into
+                    movie_likes values(null,$videoToLike,now())
+                ");
+                
+            }
+
         ?>
             <div class="center-section">
                 <div class="left-video">
@@ -83,15 +92,21 @@ include('./php/global/server.php');
                                     </span>
                                 </a>
 
-                                <a>
+                                <a href="?v=<?php echo $video ?>&like=<?php echo $video ?>">
+                                    <?php
+                                        $getLikesCOunt = mysqli_query($server,"SELECT 
+                                            * from movie_likes 
+                                            WHERE movie = '$video'
+                                        ");
+                                    ?>
                                     <i class="fa fa-thumbs-up"></i>
-                                    <span>30</span>
+                                    <span><?php echo mysqli_num_rows($getLikesCOunt); ?></span>
                                 </a>
 
-                                <a>
+                                <!----<a>
                                     <i class="fa fa-comment"></i>
                                     <span>10</span>
-                                </a>
+                                </a> --->
                             </div>
 
 
@@ -146,13 +161,20 @@ include('./php/global/server.php');
                                             <span><?php echo mysqli_num_rows($getRecommendViews); ?></span>
                                         </button>
                                         <button>
+                                            <?php
+                                                $getRecommendLikes = mysqli_query($server,"
+                                                    SELECT * from movie_likes
+                                                    WHERE movie = '$recommendId'
+                                                ");
+
+                                            ?>
                                             <i class="fa fa-thumbs-up"></i>
-                                            <span>100</span>
+                                            <span><?php echo mysqli_num_rows($getRecommendLikes); ?></span>
                                         </button>
-                                        <button>
+                                        <!----<button>
                                             <i class="fa fa-comment"></i>
                                             <span>100</span>
-                                        </button>
+                                        </button> --->
                                     </div>
                                 </div>
                             </a>
