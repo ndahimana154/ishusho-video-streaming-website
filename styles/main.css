@@ -372,7 +372,7 @@ footer .dev a {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .latest-container .latest-movie-row .movie-card {
     width: 100%;
   }
