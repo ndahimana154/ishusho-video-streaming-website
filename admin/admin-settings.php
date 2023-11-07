@@ -76,7 +76,7 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                             ?>
                             <div class="form-group">
                                 <label for="">
-                                    Username
+                                    New Username
                                 </label>
                                 <input type="text" name="usern" class="form-control" value="<?php echo $actingAdminUN ?>" placeholder="...">
                             </div>

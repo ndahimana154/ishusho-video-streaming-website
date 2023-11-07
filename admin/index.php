@@ -17,7 +17,7 @@ include("../php/global/server.php");
 
 <body>
     <div class="main-container">
-        <div class="main-logger shadow">
+        <div class="main-logger shadow bg-light">
             <h1 class="p-3 fs-3">
                 <a href="../index.php" class="navbar-brand text-dark fs-3 fw-bold me-auto" href="#">
                     IS<span class="text-danger fs-3 fw-bold ">HUS</span>HO

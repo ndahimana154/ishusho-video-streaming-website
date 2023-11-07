@@ -39,7 +39,7 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                     <h1>
                         New movies
                     </h1>
-                    <form action="" method="post" autocomplete="off">
+                    <form action="" method="post" autocomplete="off" class="form-control">
                         <?php
                         if (isset($_POST['fetch_movie'])) {
                             $movie_id = $_POST['movie_id'];

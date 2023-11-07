@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 04, 2023 at 07:07 PM
+-- Generation Time: Nov 07, 2023 at 08:59 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -69,6 +69,7 @@ CREATE TABLE `movies` (
 
 INSERT INTO `movies` (`movie_id`, `movie_name`, `movie_description`, `movie_categories`, `movie_poster`, `movie_url`, `url720`, `url480`, `release_date`, `addition_date`, `added_by`) VALUES
 ('1064024', 'Locked In', 'Unhappy newlywed Lina is pitted against her brittle, damaged mother-in-law, Katherine. An affair sets Lina onto a journey of secrecy, betrayal and murder — and a plot to seemingly destroy her. But who is the real victim, and who can she truly trust?', 'Thriller', 'https://image.tmdb.org/t/p/w500/blQaj6biyBMLo34cuFKKwbgjIBz.jpg', 'https://www.youtube.com/watch?v=y6a3yXfMEJg', '', '', '2023-11-01', '2023-11-01 07:02:36', 1),
+('118', 'Charlie and the Chocolate Factory', 'A young boy wins a tour through the most magnificent chocolate factory in the world, led by the world\'s most unusual candy maker.', 'Adventure, Comedy, Family, Fantasy', 'https://image.tmdb.org/t/p/w500/wfGfxtBkhBzQfOZw4S8IQZgrH0a.jpg', 'https://www.youtube.com/watch?v=wcdBCanllNA', '', '', '2005-07-13', '2023-11-07 08:05:01', 1),
 ('143', 'All Quiet on the Western Front', 'A young soldier faces profound disillusionment in the soul-destroying horror of World War I. Together with several other young German soldiers, he experiences the horrors of war, such evil of which he had not conceived of when signing up to fight. They eventually become sad, tormented, and confused of their purpose.', 'Drama, War', 'https://image.tmdb.org/t/p/w500/1wZUB08igw8iLUgF1r4T6aJD65b.jpg', 'https://www.youtube.com/watch?v=Qeh3DlBEjAc', '', '', '1930-04-29', '2023-11-01 07:07:47', 1),
 ('32222', 'American Desi', 'College freshman Krishna Reddy, who has never cared for his Indian-American cultural heritage, looks forward to a new life on campus but is surprised to find that he has been assigned Indian roommates.', 'Comedy, Romance, Drama', 'https://image.tmdb.org/t/p/w500/hklG9Ehe1Rt2dlgBplTIyov62qi.jpg', '', '', '', '2001-01-01', '2023-11-02 11:12:23', 1),
 ('5657', 'The Worm Eaters', 'Herman Umgar, a German hermit, has an ability to communicate with worms. One day the mayor of the town runs him off his property, so in revenge he plants worms in everybody\'s food. However, these worms are a special breed of mutant worms from the Red Tide, and when the people eat them they are transformed into giant worms themselves. These worm-people also become Herman\'s slaves. What will the remaining do?', 'Comedy, Horror', 'https://image.tmdb.org/t/p/w500/aeu5VtuXk3PUjHBAoA0q10eckcp.jpg', 'https://www.youtube.com/watch?v=Xxt4bcZQKl8', '', '', '1977-04-12', '2023-11-01 07:11:48', 1),
@@ -99,6 +100,27 @@ INSERT INTO `movies_crud_log` (`#`, `movie`, `action`, `action_time`, `action_by
 (1, '567', 'UPDATING', '2023-11-02 12:52:56', 1),
 (2, '567', 'UPDATING', '2023-11-02 12:52:58', 1),
 (3, '768', 'UPDATING', '2023-11-03 09:18:08', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `movie_likes`
+--
+
+CREATE TABLE `movie_likes` (
+  `#` int(11) NOT NULL,
+  `movie` varchar(255) NOT NULL,
+  `date&tim` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `movie_likes`
+--
+
+INSERT INTO `movie_likes` (`#`, `movie`, `date&tim`) VALUES
+(1, '567', '2023-11-07 07:50:31'),
+(2, '567', '2023-11-07 07:52:18'),
+(3, '143', '2023-11-07 07:52:32');
 
 -- --------------------------------------------------------
 
@@ -159,7 +181,113 @@ INSERT INTO `movie_views` (`#`, `movie`, `counter`, `datetime`) VALUES
 (39, '9900', 1, '2023-11-03 17:36:09'),
 (40, '9900', 1, '2023-11-03 18:02:35'),
 (41, '9900', 1, '2023-11-03 22:17:43'),
-(42, '1064024', 1, '2023-11-04 19:49:27');
+(42, '1064024', 1, '2023-11-04 19:49:27'),
+(43, '768', 1, '2023-11-06 06:36:15'),
+(44, '768', 1, '2023-11-06 06:37:28'),
+(45, '768', 1, '2023-11-06 06:37:29'),
+(46, '768', 1, '2023-11-06 06:37:57'),
+(47, '768', 1, '2023-11-06 06:38:07'),
+(48, '768', 1, '2023-11-06 06:38:07'),
+(49, '768', 1, '2023-11-06 06:38:42'),
+(50, '768', 1, '2023-11-06 06:39:21'),
+(51, '768', 1, '2023-11-06 06:39:45'),
+(52, '768', 1, '2023-11-06 06:39:46'),
+(53, '768', 1, '2023-11-06 06:40:19'),
+(54, '768', 1, '2023-11-06 06:41:23'),
+(55, '768', 1, '2023-11-06 06:42:32'),
+(56, '768', 1, '2023-11-06 06:42:34'),
+(57, '768', 1, '2023-11-06 06:42:42'),
+(58, '768', 1, '2023-11-06 06:42:44'),
+(59, '768', 1, '2023-11-06 06:42:54'),
+(60, '768', 1, '2023-11-06 06:42:55'),
+(61, '768', 1, '2023-11-06 06:42:56'),
+(62, '768', 1, '2023-11-06 06:44:47'),
+(63, '768', 1, '2023-11-06 06:44:49'),
+(64, '768', 1, '2023-11-06 06:44:49'),
+(65, '768', 1, '2023-11-06 06:44:56'),
+(66, '768', 1, '2023-11-06 06:44:57'),
+(67, '768', 1, '2023-11-06 06:44:58'),
+(68, '768', 1, '2023-11-06 06:45:50'),
+(69, '768', 1, '2023-11-06 06:45:58'),
+(70, '768', 1, '2023-11-06 06:46:40'),
+(71, '768', 1, '2023-11-06 06:46:41'),
+(72, '768', 1, '2023-11-06 06:47:22'),
+(73, '768', 1, '2023-11-06 06:47:23'),
+(74, '768', 1, '2023-11-06 06:47:41'),
+(75, '768', 1, '2023-11-06 06:47:42'),
+(76, '768', 1, '2023-11-06 06:47:43'),
+(77, '768', 1, '2023-11-06 06:48:00'),
+(78, '768', 1, '2023-11-06 06:48:01'),
+(79, '768', 1, '2023-11-06 06:48:27'),
+(80, '768', 1, '2023-11-06 06:48:34'),
+(81, '768', 1, '2023-11-06 06:50:53'),
+(82, '768', 1, '2023-11-06 06:50:55'),
+(83, '6554', 1, '2023-11-06 06:51:06'),
+(84, '6554', 1, '2023-11-06 06:52:51'),
+(85, '6554', 1, '2023-11-06 06:53:11'),
+(86, '6554', 1, '2023-11-06 06:53:16'),
+(87, '6554', 1, '2023-11-06 06:56:05'),
+(88, '6554', 1, '2023-11-06 06:56:06'),
+(89, '6554', 1, '2023-11-06 06:56:08'),
+(90, '6554', 1, '2023-11-06 06:56:30'),
+(91, '6554', 1, '2023-11-06 06:56:31'),
+(92, '6554', 1, '2023-11-06 06:56:47'),
+(93, '6554', 1, '2023-11-06 06:57:03'),
+(94, '9900', 1, '2023-11-06 07:01:40'),
+(95, '9900', 1, '2023-11-06 07:02:11'),
+(96, '9900', 1, '2023-11-06 07:02:12'),
+(97, '9900', 1, '2023-11-06 07:02:13'),
+(98, '9900', 1, '2023-11-06 07:02:39'),
+(99, '9900', 1, '2023-11-06 07:02:40'),
+(100, '9900', 1, '2023-11-06 07:02:41'),
+(101, '9900', 1, '2023-11-06 07:02:41'),
+(102, '9900', 1, '2023-11-06 07:02:42'),
+(103, '9900', 1, '2023-11-06 07:03:07'),
+(104, '9900', 1, '2023-11-06 07:03:08'),
+(105, '9900', 1, '2023-11-06 07:03:09'),
+(106, '9900', 1, '2023-11-06 07:03:19'),
+(107, '768', 1, '2023-11-06 07:03:41'),
+(108, '768', 1, '2023-11-06 07:04:04'),
+(109, '768', 1, '2023-11-06 07:06:07'),
+(110, '9900', 1, '2023-11-06 07:06:18'),
+(111, '768', 1, '2023-11-06 07:06:44'),
+(112, '143', 1, '2023-11-06 07:07:00'),
+(113, '9900', 1, '2023-11-06 07:08:40'),
+(114, '9900', 1, '2023-11-06 07:10:14'),
+(115, '9900', 1, '2023-11-06 07:11:41'),
+(116, '9900', 1, '2023-11-06 07:12:18'),
+(117, '9900', 1, '2023-11-06 07:12:20'),
+(118, '9900', 1, '2023-11-06 07:12:25'),
+(119, '9900', 1, '2023-11-06 07:12:25'),
+(120, '6554', 1, '2023-11-06 07:15:37'),
+(121, '6554', 1, '2023-11-06 07:21:45'),
+(122, '6554', 1, '2023-11-06 07:22:35'),
+(123, '6554', 1, '2023-11-06 07:23:00'),
+(124, '6554', 1, '2023-11-06 07:23:01'),
+(125, '6554', 1, '2023-11-06 07:23:18'),
+(126, '6554', 1, '2023-11-06 07:23:45'),
+(127, '6554', 1, '2023-11-06 07:23:51'),
+(128, '9900', 1, '2023-11-06 07:27:37'),
+(129, '567', 1, '2023-11-07 07:32:30'),
+(130, '567', 1, '2023-11-07 07:33:41'),
+(131, '567', 1, '2023-11-07 07:34:24'),
+(132, '567', 1, '2023-11-07 07:34:28'),
+(133, '567', 1, '2023-11-07 07:37:17'),
+(134, '567', 1, '2023-11-07 07:41:33'),
+(135, '567', 1, '2023-11-07 07:41:38'),
+(136, '567', 1, '2023-11-07 07:41:45'),
+(137, '567', 1, '2023-11-07 07:50:07'),
+(138, '567', 1, '2023-11-07 07:50:31'),
+(139, '567', 1, '2023-11-07 07:52:18'),
+(140, '143', 1, '2023-11-07 07:52:26'),
+(141, '143', 1, '2023-11-07 07:52:32'),
+(142, '5657', 1, '2023-11-07 07:52:34'),
+(143, '5657', 1, '2023-11-07 07:54:20'),
+(144, '5657', 1, '2023-11-07 07:56:03'),
+(145, '5657', 1, '2023-11-07 07:58:51'),
+(146, '5657', 1, '2023-11-07 07:59:21'),
+(147, '5657', 1, '2023-11-07 07:59:21'),
+(148, '5657', 1, '2023-11-07 07:59:53');
 
 --
 -- Indexes for dumped tables
@@ -187,6 +315,13 @@ ALTER TABLE `movies_crud_log`
   ADD KEY `defrjrioj` (`action_by`);
 
 --
+-- Indexes for table `movie_likes`
+--
+ALTER TABLE `movie_likes`
+  ADD PRIMARY KEY (`#`),
+  ADD KEY `dsiovkmjsdioj` (`movie`);
+
+--
 -- Indexes for table `movie_views`
 --
 ALTER TABLE `movie_views`
@@ -210,10 +345,16 @@ ALTER TABLE `movies_crud_log`
   MODIFY `#` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `movie_likes`
+--
+ALTER TABLE `movie_likes`
+  MODIFY `#` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `movie_views`
 --
 ALTER TABLE `movie_views`
-  MODIFY `#` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `#` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
 
 --
 -- Constraints for dumped tables
@@ -231,6 +372,12 @@ ALTER TABLE `movies`
 ALTER TABLE `movies_crud_log`
   ADD CONSTRAINT `defrjrioj` FOREIGN KEY (`action_by`) REFERENCES `admins` (`admin_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `dsfgiojrgiovjeioj` FOREIGN KEY (`movie`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `movie_likes`
+--
+ALTER TABLE `movie_likes`
+  ADD CONSTRAINT `dsiovkmjsdioj` FOREIGN KEY (`movie`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `movie_views`
