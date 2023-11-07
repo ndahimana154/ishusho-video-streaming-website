@@ -165,7 +165,9 @@ include('./php/global/server.php');
     <?php
         }
     }
+    include('./php/client/footer.php');
     ?>
+
     <!-- Jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 

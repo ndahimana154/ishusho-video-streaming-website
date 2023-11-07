@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 a {
   text-decoration: none;
   font-size: 16px;
@@ -10,17 +14,20 @@ input::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 body {
+  margin: 0;
+  padding: 0;
   background: linear-gradient(45deg, #2c3e50, #34495e, #2c3e50);
 }
 .latest-container {
   width: 100vw;
-  margin: 10px;
+  /* margin: 10px; */
 }
 .latest-container h1 {
   text-transform: uppercase;
   font-weight: bold;
   color: #fff;
   font-size: 18px;
+  padding: 10px;
 }
 .latest-container .latest-movie-row {
   display: flex;
@@ -267,6 +274,70 @@ body {
   margin-left: 10px;
 }
 
+
+/* Footer */
+footer {
+  width: 100%;
+  padding: 10px;
+  background: #ddd9d9;
+}
+footer .flexer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+}
+footer .flexer .about {
+  flex: 1;
+  padding: 10px;
+}
+footer .flexer .important {
+  flex: 3;
+  text-align: center;
+}
+footer .flexer .important h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+footer .flexer .social-medias {
+  flex: 1;
+  padding: 10px;
+}
+footer .flexer .social-medias h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+footer .flexer .social-medias ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+}
+footer .flexer .social-medias ul  li {
+  margin-top: 5px;
+  margin-right: 10px;
+}
+footer .flexer .social-medias ul  li a {
+  color: #000;  
+}
+footer .flexer .social-medias ul li a img {
+  width: 30px;
+}
+footer .flexer .social-medias .copy{
+  /* margin-left: 20px; */
+}
+footer .dev {
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+footer .dev a {
+  color: #2c3e50;
+}
+
 @media (max-width: 810px) {
   .latest-container .latest-movie-row .movie-card {
     width: 30%;
@@ -295,11 +366,10 @@ body {
   .center-section .recommended-vids .recommend-box .right {
     flex: 3;
   }
-  /* .center-section .recommended-vids .recommend-box .recommend .right p {
-    display: block;
-    overflow: auto;
-    text-overflow: unset;
-  } */
+  footer .flexer {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 550px) {

@@ -19,7 +19,7 @@ include('./php/global/server.php');
 <body>
   <?php
   include("./php/client/nav-bar.php");
-    ?>
+  ?>
   <!-- Search results section -->
   <div id="searchResults"></div>
 
@@ -115,6 +115,9 @@ include('./php/global/server.php');
       </div>
     </div>
   </div>
+  <?php
+  include('./php/client/footer.php');
+  ?>
   <!-- End latest movies -->
   <!-- Jquery CDN -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

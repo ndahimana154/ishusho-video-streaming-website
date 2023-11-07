@@ -1,62 +1,45 @@
-<?php
-// Your TMDb API key
-$api_key = '7d283fea76fe291d82e6391d7e60fd25';
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Video Views</title>
+    <!-- Add Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="viewsChart" width="800" height="400"></canvas>
 
-// Movie ID for the movie you want to retrieve information about
-$movie_id = 951491; // Change this to the desired movie ID
+    <script>
+        // Simulated data (replace this with your PHP to retrieve actual data)
+const viewsData = {
+    labels: ["2023-10-01", "2023-10-02", "2023-10-03", "2023-10-04", "2023-10-05", "2023-10-06"],
+    values: [120, 180, 200, 150, 220, 190] // Replace with your actual views per day
+};
 
-// Base URL for TMDb API
-$base_url = 'https://api.themoviedb.org/3/movie/';
+// Use the Chart.js library to create the line chart
+const ctx = document.getElementById('viewsChart').getContext('2d');
 
-// Fetching movie details
-$movie_url = $base_url . $movie_id . '?api_key=' . $api_key . '&append_to_response=videos,credits';
-
-// Initialize cURL session
-$curl = curl_init();
-
-// Set cURL options
-curl_setopt($curl, CURLOPT_URL, $movie_url);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-// Execute the cURL session
-$response = curl_exec($curl);
-
-// Close cURL session
-curl_close($curl);
-
-// Decode the JSON response
-$data = json_decode($response, true);
-
-// Check if the request was successful
-if ($data) {
-    // Display movie details
-    echo 'Title: ' . $data['title'] . '<br>';
-    echo 'Overview: ' . $data['overview'] . '<br>';
-
-    // Get categories
-    $genres = array();
-    foreach ($data['genres'] as $genre) {
-        $genres[] = $genre['name'];
+const viewsChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: viewsData.labels,
+        datasets: [{
+            label: 'Daily Video Views',
+            data: viewsData.values,
+            fill: false,
+            borderColor: 'blue',
+            tension: 0.4
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
     }
-    echo 'Categories: ' . implode(', ', $genres) . '<br>';
+});
 
-    // Get poster location
-    echo 'Poster URL: https://image.tmdb.org/t/p/w500' . $data['poster_path'] . '<br>';
-
-    // Get video link
-    if (isset($data['videos']['results'][0]['key'])) {
-        echo 'Video Link: https://www.themoviedb.org/video/play?key=' . $data['videos']['results'][0]['key'] . '<br>';
-    }
-
-    // Get major actors
-    echo 'Major Actors:<br>';
-    foreach (array_slice($data['credits']['cast'], 0, 5) as $actor) {
-        echo $actor['name'] . ' as ' . $actor['character'] . '<br>';
-    }
-
-    // Display more information as needed
-    // Example: Release date, runtime, etc.
-} else {
-    echo 'Failed to retrieve movie details.';
-}
-?>
+        // Your JavaScript code to create the chart will go here
+    </script>
+</body>
+</html>
