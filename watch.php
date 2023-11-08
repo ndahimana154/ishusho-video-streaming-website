@@ -12,9 +12,6 @@ include('./php/global/server.php');
     <link rel="stylesheet" href="assets/fontawesome-free-6.4.2-web/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Plyr.io CDN -->
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.7/plyr.css" />
-
 
     <link rel="stylesheet" href="./styles/main.css">
 
@@ -61,25 +58,62 @@ include('./php/global/server.php');
             $viewsCount = mysqli_num_rows($getViewsCount);
 
             // If the like button is clicked
-            if(isset($_GET['like'])) {
+            if (isset($_GET['like'])) {
                 $videoToLike = $_GET['like'];
-                $insertLike = mysqli_query($server,"INSERT into
+                $insertLike = mysqli_query($server, "INSERT into
                     movie_likes values(null,$videoToLike,now())
                 ");
-                
             }
 
         ?>
             <div class="center-section">
                 <div class="left-video">
                     <div class="video-display">
-                        <video id="my-video" controls>
-                            <source src="<?php echo $video720p; ?>" type="video/mp4" data-size="720" />
-                            <source src="<?php echo $video480p; ?>" type="video/mp4" data-size="480" />
-                        </video>
+                        <div class="video-container">
+                            <video id="myVideo">
+                                <source src="<?php echo $video480p; ?>" type="video/mp4" data-size="480">
+                                <source src="<?php echo $video720p; ?>" type="video/mp4" data-size="720">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="vid-controlers">
+                                <div class="pnf">
+                                    <div class="upper">
+                                        <button id="rewindBtn">
+                                            <i class="fa fa-backward"></i>
+                                        </button>
+                                        <button id="playBtn">
+                                            <i class="fa fa-play"></i>
+                                        </button>
+                                        <button id="forwardBtn">
+                                            <i class="fa fa-forward"></i>
+                                        </button>
+                                    </div>
+                                    <div class="lower">
+                                        <div class="volumeBox">
+                                            <span>&#x1F50A;</span>
+                                            <input type="range" id="volumeRange" min="0" max="100">
 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="remctrls">
+                                    <div id="timeDisplay">0:00 / 0:00</div>
+                                    <div class="progressBox">
+                                        <input type="range" id="progressRange" min="0" max="100" value="0" step="0.1">
+                                    </div>
 
+                                    <select id="qualitySelect">
+                                        <option value="<?php echo $video720p ?>">720p</option>
+                                        <option value="<?php echo $video480p; ?>">480p</option>
+                                    </select>
+                                    <button id="fullscreenBtn">
+                                        <i class="fa fa-expand"></i>
+                                    </button>
 
+                                </div>
+
+                            </div>
+                        </div>
                         <div class="video-controls">
                             <h2>
                                 <?php echo $dataVideoExistence['movie_name']; ?>
@@ -94,7 +128,7 @@ include('./php/global/server.php');
 
                                 <a href="?v=<?php echo $video ?>&like=<?php echo $video ?>">
                                     <?php
-                                        $getLikesCOunt = mysqli_query($server,"SELECT 
+                                    $getLikesCOunt = mysqli_query($server, "SELECT 
                                             * from movie_likes 
                                             WHERE movie = '$video'
                                         ");
@@ -162,7 +196,7 @@ include('./php/global/server.php');
                                         </button>
                                         <button>
                                             <?php
-                                                $getRecommendLikes = mysqli_query($server,"
+                                            $getRecommendLikes = mysqli_query($server, "
                                                     SELECT * from movie_likes
                                                     WHERE movie = '$recommendId'
                                                 ");
@@ -195,9 +229,7 @@ include('./php/global/server.php');
 
     <!-- End latest movies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Include PlyR.io CDN -->
-    <script src="https://cdn.plyr.io/3.6.7/plyr.js"></script>
-    <!-- Clients Watching Movi Controls from Plyri.io -->
+    <!-- Watch controls -->
     <script src="./js/clientsWatchControls.js"></script>
     <!-- Include search.js -->
     <script src="./js/search.js"></script>
