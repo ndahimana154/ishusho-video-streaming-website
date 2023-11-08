@@ -100,6 +100,7 @@ body {
 }
 .center-section .left-video .video-display {
   padding: 10px;
+  border-radius: 10px;
 }
 .center-section .left-video .video-display #my-video {
   width: 100%;

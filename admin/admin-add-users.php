@@ -96,12 +96,6 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                             </label>
                             <select name="as" id="" class="form-control">
                                 <option>
-                                    Select user type
-                                </option>
-                                <option>
-                                    Administrator
-                                </option>
-                                <option>
                                     Standard
                                 </option>
                             </select>

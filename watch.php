@@ -74,8 +74,8 @@ include('./php/global/server.php');
                 <div class="left-video">
                     <div class="video-display">
                         <video id="my-video" controls>
-                            <source src="<?php echo $video720p; ?>" type="video/mp4" data-size="480" />
-                            <source src="<?php echo $video480p; ?>" type="video/mp4" data-size="720" />
+                            <source src="<?php echo $video720p; ?>" type="video/mp4" data-size="720" />
+                            <source src="<?php echo $video480p; ?>" type="video/mp4" data-size="480" />
                         </video>
 
 

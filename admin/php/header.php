@@ -1,8 +1,9 @@
 <header class="bg-dark shadow">
     <div class="logo">
-        <a href="admin-home.php">
+        <!-- <a href="admin-home.php">
             ISHUSHO
-        </a>
+        </a> -->
+        <a href="admin-home.php" class="navbar-brand text-light fs-3 fw-bold me-auto">IS<span class="text-danger fs-3">HUS</span>HO</a>
     </div>
     <div class="profile">
         <button class="">

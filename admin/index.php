@@ -190,8 +190,9 @@ include("../php/global/server.php");
                             $userName = $_POST['un'];
                             $passWord = $_POST['pw'];
                             $checkCredentials = mysqli_query($server, "SELECT * from admins
-                            WHERE admin_un = '$userName'
-                            AND admin_pw = '$passWord'
+                            WHERE BINARY admin_un = '$userName'
+                            AND BINARY admin_pw = '$passWord'
+                            AND admin_status !='Disabled'
                         ");
 
                             if (mysqli_num_rows($checkCredentials) > 0) {
