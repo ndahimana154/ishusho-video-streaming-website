@@ -197,15 +197,15 @@ include("../php/global/server.php");
 
                             if (mysqli_num_rows($checkCredentials) > 0) {
                                 $_SESSION['actingAdminUsername'] = $userName;
-                                ?>
+                        ?>
                                 <p class="alert alert-success">
                                     Login succed. <a href="./admin-home.php">
                                         go home
                                     </a>
                                 </p>
-                                <?php
+                            <?php
                             } else {
-                        ?>
+                            ?>
                                 <p class="alert alert-danger">
                                     Credentials are incorrect!
                                 </p>
@@ -213,9 +213,7 @@ include("../php/global/server.php");
                             }
                         }
                         ?>
-                        <!-- <span id="formErrors">
-                    Form
-                </span> -->
+
                         <p class="form-group">
                             <label class="">
                                 Username
