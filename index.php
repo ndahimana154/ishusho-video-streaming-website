@@ -9,348 +9,85 @@ include('./php/global/server.php');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ISHUSHO Movies</title>
-    <link rel="stylesheet" href="./styles/new-main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>ISHUSHO MOVIES</title>
+  <link rel="stylesheet" href="./styles/new-main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>ISHUSHO MOVIES</title>
 </head>
 
 <body>
 
-<main class="container">
-      <header>
-        <div class="logo">
-          <h1>ISHU<span>SHO</span></h1>
-        </div>
-        <div class="links">
-          <ul>
-            <li>
-              <a href="" class="active"> Home</a>
-            </li>
-            <li>
-              <a href=""> Movies</a>
-            </li>
-            <li>
-              <a href="">Series</a>
-            </li>
-            <li>
-              <a href="">Search </a>
-            </li>
-          </ul>
-        </div>
-      </header>
-      <section class="pop-mov pop">
-        <div class="cont">
-          <h1>
-            POPULAR MOVIES
-            <span></span>
-          </h1>
-          <div class="row">
+  <main class="container">
+    <header>
+      <div class="logo">
+        <h1>ISHU<span>SHO</span></h1>
+      </div>
+      <div class="links">
+        <ul>
+          <li>
+            <a href="" class="active"> Home</a>
+          </li>
+          <li>
+            <a href=""> Movies</a>
+          </li>
+          <li>
+            <a href="">Series</a>
+          </li>
+          <li>
+            <a href="">Search </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section class="pop-mov pop">
+      <div class="cont">
+        <h1>
+          POPULAR MOVIES
+          <span></span>
+        </h1>
+        <div class="row">
+          <?php
+          $getMovies = mysqli_query($server, "SELECT * from 
+            movies ORDER BY 
+            release_date DESC
+            LIMIT 20
+          ");
+          while ($dataGetMovies = mysqli_fetch_array($getMovies)) {
+
+
+          ?>
             <div class="box">
-              <img
-                src="./images/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg"
-                alt=""
-              />
-              <a href="">
+              <img src="<?php echo $dataGetMovies['movie_poster']; ?>" alt="" />
+              <a href="watch.php?v=<?php echo $dataGetMovies['movie_id']; ?>">
                 <div class="box-info">
                   <img src="./images/youtube.png" alt="" />
                   <div class="others">
-                    <p>Genre is to be here</p>
+                    <p>
+                      <?php echo $dataGetMovies['movie_categories'] ?>
+                    </p>
                     <span>
                       <i class="fa fa-calendar"></i>
-                      2023
+                      <?php
+                      echo date('Y', strtotime($dataGetMovies['release_date']))
+                      ?>
                     </span>
-                    <h4>Thisfgrtiogjiejrio cs9wiuje 9hvdc9 hd9c hsd9i hiu hduidhui  ejr is a movie name</h4>
+                    <h4><?php echo $dataGetMovies['movie_name']; ?></h4>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="box">
-              <img
-                src="./images/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg"
-                alt=""
-              />
-              <a href="">
-                <div class="box-info">
-                  <img src="./images/youtube.png" alt="" />
-                  <div class="others">
-                    <p>Genre is to be here</p>
-                    <span>2023</span>
-                    <h4>This is a movie name</h4>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="box">
-              <img
-                src="./images/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg"
-                alt=""
-              />
-              <a href="">
-                <div class="box-info">
-                  <img src="./images/youtube.png" alt="" />
-                  <div class="others">
-                    <p>Genre is to be here</p>
-                    <span>2023</span>
-                    <h4>This is a movie name</h4>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="box">
-              <img
-                src="./images/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg"
-                alt=""
-              />
-              <a href="">
-                <div class="box-info">
-                  <img src="./images/youtube.png" alt="" />
-                  <div class="others">
-                    <p>Genre is to be here</p>
-                    <span>2023</span>
-                    <h4>This is a movie name</h4>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="box">
-              <img
-                src="./images/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg"
-                alt=""
-              />
-              <a href="">
-                <div class="box-info">
-                  <img src="./images/youtube.png" alt="" />
-                  <div class="others">
-                    <p>Genre is to be here</p>
-                    <span>2023</span>
-                    <h4>This is a movie name</h4>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="box">
-              <img
-                src="./images/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg"
-                alt=""
-              />
-              <a href="">
-                <div class="box-info">
-                  <img src="./images/youtube.png" alt="" />
-                  <div class="others">
-                    <p>Genre is to be here</p>
-                    <span>2023</span>
-                    <h4>This is a movie name</h4>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="box">
-              <img
-                src="./images/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg"
-                alt=""
-              />
-              <a href="">
-                <div class="box-info">
-                  <img src="./images/youtube.png" alt="" />
-                  <div class="others">
-                    <p>Genre is to be here</p>
-                    <span>2023</span>
-                    <h4>This is a movie name</h4>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="box">
-              <img
-                src="./images/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg"
-                alt=""
-              />
-              <a href="">
-                <div class="box-info">
-                  <img src="./images/youtube.png" alt="" />
-                  <div class="others">
-                    <p>Genre is to be here</p>
-                    <span>2023</span>
-                    <h4>This is a movie name</h4>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="box">
-              <img
-                src="./images/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg"
-                alt=""
-              />
-              <a href="">
-                <div class="box-info">
-                  <img src="./images/youtube.png" alt="" />
-                  <div class="others">
-                    <p>Genre is to be here</p>
-                    <span>2023</span>
-                    <h4>This is a movie name</h4>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="box">
-              <img
-                src="./images/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg"
-                alt=""
-              />
-              <a href="">
-                <div class="box-info">
-                  <img src="./images/youtube.png" alt="" />
-                  <div class="others">
-                    <p>Genre is to be here</p>
-                    <span>2023</span>
-                    <h4>This is a movie name</h4>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
+          <?php
+          }
+          ?>
         </div>
-      </section>
-    </main>
-    <script src="./js/clientHeaderScroll.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <?php
-  include("./php/client/nav-bar.php");
-  ?>
-  <!-- Search results section -->
-  <div id="searchResults"></div>
-
-  <!-- Hero -->
-  <!-- <div id="carouselExampleCaptions" class="carousel  container slide mt-2" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://fakeimg.pl/600x300" class="d-block w-100 rounded" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="https://fakeimg.pl/600x300" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block rounded">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="https://fakeimg.pl/600x300" class="d-block w-100 rounded" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-    </div> -->
-  <!-- End hero -->
-
-  <!-- Latest movie -->
-  <div class="latest-container">
-    <h1 class="">
-      Latest movies
-    </h1>
-    <div class="latest-movie-row">
-      <?php
-      $getMovies = mysqli_query($server, "SELECT * from 
-                movies ORDER BY 
-                release_date DESC
-                LIMIT 20
-              ");
-      while ($dataGetMovies = mysqli_fetch_array($getMovies)) {
-      ?>
-        <div class="movie-card shadow ">
-          <img src="<?php echo $dataGetMovies['movie_poster']; ?>" class="card-img-top w-100 rounded" alt="Movie Image">
-          <div class="card-img-overlay">
-            <div class="card-text-overlay">
-              <a href="watch.php?v=<?php echo $dataGetMovies['movie_id']; ?>">
-                <h2 class="">
-                  <?php echo $dataGetMovies['movie_name']; ?>
-                </h2>
-                <p class="card-text text-light text-break fs-6 movie-desc">
-                  <?php echo $dataGetMovies['movie_description'] ?>
-                </p>
-              </a>
-              <div class="row">
-                <a class="">
-                  <i class="fas fa-calendar"></i> <span class="fw-bold">
-                    Year:
-                    <?php
-                    echo date('Y', strtotime($dataGetMovies['release_date']))
-                    ?>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      <?php
-      }
-      ?>
-    </div>
-    <div class="">
-      <div class="m-2 text-center">
-        <a href="more-movies.php" class="btn btn-primary mx-auto" type="button">
-          <i class="fas fa-caret-down me-md-2"></i>
-          Explore more...
-        </a>
       </div>
-    </div>
-  </div>
-  <?php
-  include('./php/client/footer.php');
-  ?>
-  <!-- End latest movies -->
-  <!-- Jquery CDN -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </section>
+  </main>
+  <script src="./js/clientHeaderScroll.js"></script>
 
-  <!-- Include bootstrapp CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Include search.js -->
-  <script src="./js/search.js"></script>
+
+
+
+
 
 </body>
 

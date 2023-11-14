@@ -80,15 +80,15 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
-  overflow: auto;
-  overflow-y: hidden;
+  /* overflow: auto; */
+  overflow: hidden;
 }
 .container .pop .cont .row .box {
   position: relative;
 }
 
 .container .pop .cont .row .box img {
-  width: calc(100vw / 4.2);
+  width: calc(100vw / 4);
   object-fit: cover;
 }
 
@@ -140,6 +140,7 @@ body {
   font-weight: 500;
 }
 .container .pop .cont .row .others h4 {
+  font-size: 20px;
   margin-top: 20px;
   font-weight: bold;
   display: -webkit-box;
