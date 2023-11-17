@@ -24,10 +24,10 @@ include('./php/global/server.php');
       <div class="links">
         <ul>
           <li>
-            <a href="" class="active"> Home</a>
+            <a href="./index.php" class="active"> Home</a>
           </li>
           <li>
-            <a href=""> Movies</a>
+            <a href="./movies.php"> Movies</a>
           </li>
           <li>
             <a href="">Series</a>
