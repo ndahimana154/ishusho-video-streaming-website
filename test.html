@@ -1,79 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest Movies</title>
-    <!-- Add your CSS styles or link to an external stylesheet here -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Hero Section</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #111;
+      color: #fff;
+      overflow-x: hidden;
+    }
 
-        #latestMovies {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: flex-start;
-        }
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
 
-        .movieCard {
-            width: 300px;
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    .movie-info {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+    }
 
-        .movieImage {
-            width: 100%;
-            height: 200px; /* Adjust the height as needed */
-            object-fit: cover;
-            border-radius: 8px;
-        }
+    .movie-info h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
 
-        .movieDetails {
-            margin-top: 10px;
-        }
+    .movie-info p {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
 
-        .genreButton {
-            background-color: #3498db;
-            color: #fff;
-            padding: 5px 10px;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    .watch-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #ff0909;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .watch-button:hover {
+      background-color: #ff1a1a;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="hero-section" id="hero-section">
+    <div class="movie-info" id="movie-info">
+      <h1 id="movie-title">Movie Title</h1>
+      <p id="movie-genres">Genres: Action, Sci-Fi</p>
+      <p id="movie-release-year">Release Year: 2023</p>
+      <p id="movie-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis, urna sed cursus pretium, arcu tortor fermentum justo, ac interdum eros tortor vel erat. Sed at odio ac tellus dignissim ultrices non ac tortor.</p>
+      <a href="#" class="watch-button">Watch Now</a>
+    </div>
+  </div>
 
-    <section id="latestMovies">
-        <!-- Example Movie Card -->
-        <div class="movieCard">
-            <img class="movieImage" src="path/to/your/movie/image.jpg" alt="Movie Title">
-            <div class="movieDetails">
-                <h3>Movie Name</h3>
-                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <div>
-                    <button class="genreButton">Action</button>
-                    <button class="genreButton">Drama</button>
-                    <!-- Add more genre buttons as needed -->
-                </div>
-                <button class="watchButton">Watch Now</button>
-            </div>
-        </div>
+  <script>
+    // Replace these values with data retrieved from the database
+    const movieData = {
+      title: 'Movie Title',
+      genres: ['Action', 'Sci-Fi'],
+      releaseYear: '2023',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis, urna sed cursus pretium, arcu tortor fermentum justo, ac interdum eros tortor vel erat. Sed at odio ac tellus dignissim ultrices non ac tortor.',
+    };
 
-        <!-- Add more movie cards dynamically based on your backend data -->
-        <!-- You can use JavaScript to fetch and populate movie details -->
+    // Function to update movie information on the page
+    const updateMovieInfo = () => {
+      document.getElementById('movie-title').innerText = movieData.title;
+      document.getElementById('movie-genres').innerText = `Genres: ${movieData.genres.join(', ')}`;
+      document.getElementById('movie-release-year').innerText = `Release Year: ${movieData.releaseYear}`;
+      document.getElementById('movie-description').innerText = movieData.description;
+    };
 
-    </section>
+    // Initial update
+    updateMovieInfo();
 
+    // Simulate changing background image
+    setInterval(() => {
+      const randomImageURL = './images/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg'; // Replace with actual image URL
+      document.getElementById('hero-section').style.backgroundImage = `url(${randomImageURL})`;
+    }, 5000); // Change image every 5 seconds
+  </script>
 </body>
-
 </html>

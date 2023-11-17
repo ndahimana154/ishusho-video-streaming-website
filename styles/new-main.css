@@ -6,9 +6,14 @@
   font-size: 14px;
   text-decoration: none;
 }
+input[type="search"]::-webkit-search-clear-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
 body {
   overflow: auto;
-  background: #333;
+  background: #000;
   color: #fff;
 }
 .container header {
@@ -18,6 +23,7 @@ body {
   flex-wrap: no-wrap;
   position: sticky;
   top: 0;
+  z-index: 15;
 }
 .container header.scrolled {
   background: #333; /* Add your background color here */
@@ -80,7 +86,6 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
-  /* overflow: auto; */
   overflow: hidden;
 }
 .container .pop .cont .row .box {
@@ -88,7 +93,7 @@ body {
 }
 
 .container .pop .cont .row .box img {
-  width: calc(100vw / 4);
+  width: calc((100vw - 2vw) / 5);
   object-fit: cover;
 }
 
@@ -99,7 +104,6 @@ body {
   left: 0;
   right: 0;
   color: #fff;
-  /* display: none; */
   transition: bottom 0.3s ease-in-out;
 }
 .container .pop .cont .row .box:hover a {
@@ -118,7 +122,6 @@ body {
 
 .container .pop .cont .row .box-info img {
   width: 40px;
-  /* height: 30px; */
   top: 30%;
   left: 50%;
   position: absolute;
@@ -149,4 +152,123 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   text-overflow: ellipsis;
+}
+
+.container .move {
+  width: 100%;
+}
+.container .move .move-cont {
+  width: 98%;
+  margin: auto;
+}
+.container .move .move-cont h1 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+.container .move .move-cont h1 b {
+  font-size: 21px;
+}
+.container .move .move-cont h1 span {
+  display: block;
+  border-bottom: 5px solid #ff0909;
+  width: 80px;
+  margin-top: 5px;
+}
+.container .move .move-cont .move-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow: hidden;
+}
+.container .move .move-cont .move-row .box {
+  position: relative;
+}
+.container .move .move-cont .move-row .box img {
+  width: calc((100vw - 4vw) / 5.1);
+}
+.container .move .move-cont .move-row .box a {
+  position: absolute;
+  top: 0;
+  bottom: -100%;
+  display: none;
+  left: 0;
+  right: 0;
+  color: #fff;
+  transition: bottom 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.container .move .move-cont .move-row .box:hover a {
+  bottom: 0;
+  display: flex;
+
+}
+.container .move .move-cont .move-row .box-info{
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, transparent, #000);
+}
+.container .move .move-cont .move-row .info-cont {
+  position: relative;
+  bottom: 0;
+}
+.container .move .move-cont .move-row  .box-info img {
+  width: 40px;
+  top: 30%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.container .move .move-cont .move-row .others {
+  bottom: 0;
+  position: absolute;
+  padding: 10px;
+}
+
+.search {
+  width: 100%;
+}
+.search .search-cont {
+  width: 98%;
+  margin: auto;
+}
+.search .search-cont .form {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+}
+.search .search-cont .form  ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  margin: 10px;
+}
+.search .search-cont .form  ul li {
+  margin-right: 10px;
+}
+.search .search-cont .form  ul li button {
+  background: 0;
+  color: #fff;
+  padding: 10px;
+  border: 0;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.search .search-cont .form ul li .live-search {
+  background: #ff0909;
+}
+.search .search-cont .form  #searchField {
+  width: 80%;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  border: 2px solid #333;
+  outline: 0;
+  color: #fff;
 }

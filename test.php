@@ -1,99 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Player</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Hero Section</title>
+  <style>
+    /* Styles remain unchanged */
+  </style>
 </head>
-
 <body>
-    <video id="myVideo" width="640" height="360">
-        <source src="./Videos/video-low.mp4" type="video/mp4" data-size="480">
-        <source src="./Videos/video-medium.mp4" type="video/mp4" data-size="720">
-        Your browser does not support the video tag.
-    </video>
+  <div class="hero-section" id="hero-section">
+    <div class="movie-info" id="movie-info">
+      <h1 id="movie-title">Movie Title</h1>
+      <p id="movie-genres">Genres: Action, Sci-Fi</p>
+      <p id="movie-release-year">Release Year: 2023</p>
+      <p id="movie-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis, urna sed cursus pretium, arcu tortor fermentum justo, ac interdum eros tortor vel erat. Sed at odio ac tellus dignissim ultrices non ac tortor.</p>
+      <a href="#" class="watch-button">Watch Now</a>
+    </div>
+  </div>
 
-    <button id="playBtn">Play/Pause</button>
-    <button id="rewindBtn">Rewind</button>
-    <button id="forwardBtn">Fast Forward</button>
-    <input type="range" id="volumeRange" min="0" max="100">
-    <input type="range" id="progressRange" min="0" max="100" value="0" step="0.1">
-    <div id="timeDisplay">0:00 / 0:00</div>
-    <button id="fullscreenBtn">Fullscreen</button>
-    <select id="qualitySelect">
-        <option value="./Videos/video-low.mp4">480p</option>
-        <option value="./Videos/video-medium.mp4">720p</option>
-    </select>
+  <script>
+    // PHP script to fetch movie data from MySQL database
+    <?php
+      // Replace these lines with your actual PHP and MySQL database connection code
+      $host = 'your_database_host';
+      $username = 'your_database_username';
+      $password = 'your_database_password';
+      $database = 'your_database_name';
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const video = document.getElementById("myVideo");
+      $conn = mysqli_connect($host, $username, $password, $database);
 
-            // Play/Pause functionality
-            const playButton = document.getElementById("playBtn");
-            playButton.addEventListener("click", function() {
-                if (video.paused) {
-                    video.play();
-                } else {
-                    video.pause();
-                }
-            });
+      if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
 
-            // Update progress bar as the video plays
-            video.addEventListener('timeupdate', function() {
-                const progress = (video.currentTime / video.duration) * 100;
-                document.getElementById("progressRange").value = progress;
+      $query = "SELECT * FROM movies ORDER BY RAND() LIMIT 1"; // Fetch a random movie
+      $result = mysqli_query($conn, $query);
+      $movieData = mysqli_fetch_assoc($result);
 
-                // Display elapsed and remaining time
-                const timeDisplay = document.getElementById("timeDisplay");
-                const elapsedMinutes = Math.floor(video.currentTime / 60);
-                const elapsedSeconds = Math.floor(video.currentTime - elapsedMinutes * 60);
-                const totalMinutes = Math.floor(video.duration / 60);
-                const totalSeconds = Math.floor(video.duration - totalMinutes * 60);
-                timeDisplay.textContent = `${elapsedMinutes}:${(elapsedSeconds < 10 ? '0' : '') + elapsedSeconds} / ${totalMinutes}:${(totalSeconds < 10 ? '0' : '') + totalSeconds}`;
-            });
+      echo "const movieData = " . json_encode($movieData) . ";";
+    ?>
+    // Function to update movie information on the page
+    const updateMovieInfo = () => {
+      document.getElementById('movie-title').innerText = movieData.title;
+      document.getElementById('movie-genres').innerText = `Genres: ${movieData.genres}`;
+      document.getElementById('movie-release-year').innerText = `Release Year: ${movieData.release_year}`;
+      document.getElementById('movie-description').innerText = movieData.description;
+    };
 
-            // Rewind functionality
-            const rewindButton = document.getElementById("rewindBtn");
-            rewindButton.addEventListener("click", function() {
-                video.currentTime -= 10; // Go back 10 seconds
-            });
+    // Initial update
+    updateMovieInfo();
 
-            // Fast-Forward functionality
-            const forwardButton = document.getElementById("forwardBtn");
-            forwardButton.addEventListener("click", function() {
-                video.currentTime += 10; // Skip ahead 10 seconds
-            });
-
-            // Volume control
-            const volumeSlider = document.getElementById("volumeRange");
-            volumeSlider.addEventListener("input", function() {
-                video.volume = volumeSlider.value / 100;
-            });
-
-            // Fullscreen mode
-            const fullscreenButton = document.getElementById("fullscreenBtn");
-            fullscreenButton.addEventListener("click", function() {
-                if (video.requestFullscreen) {
-                    video.requestFullscreen();
-                } else if (video.mozRequestFullScreen) {
-                    video.mozRequestFullScreen();
-                } else if (video.webkitRequestFullscreen) {
-                    video.webkitRequestFullscreen();
-                }
-            });
-
-            // Quality switch
-            const qualitySelect = document.getElementById("qualitySelect");
-            qualitySelect.addEventListener("change", function() {
-                const selectedSource = qualitySelect.value;
-                video.src = selectedSource;
-                video.load();
-                video.play();
-            });
-        });
-    </script>
+    // Simulate changing background image
+    setInterval(() => {
+      const randomImageURL = 'https://via.placeholder.com/1920x1080'; // Replace with actual image URL
+      document.getElementById('hero-section').style.backgroundImage = `url(${randomImageURL})`;
+    }, 5000); // Change image every 5 seconds
+  </script>
 </body>
-
 </html>
