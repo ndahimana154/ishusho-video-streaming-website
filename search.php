@@ -24,7 +24,7 @@ include('./php/global/server.php');
             <div class="links">
                 <ul>
                     <li>
-                        <a href="./index.php" class="active"> Home</a>
+                        <a href="./index.php"> Home</a>
                     </li>
                     <li>
                         <a href="./movies.php"> Movies</a>
@@ -33,7 +33,7 @@ include('./php/global/server.php');
                         <a href="./series.php">Series</a>
                     </li>
                     <li>
-                        <a href="./search.php">Search </a>
+                        <a href="./search.php" class="active">Search </a>
                     </li>
                 </ul>
             </div>
