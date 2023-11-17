@@ -30,10 +30,10 @@ include('./php/global/server.php');
             <a href="./movies.php"> Movies</a>
           </li>
           <li>
-            <a href="">Series</a>
+            <a href="./series.php">Series</a>
           </li>
           <li>
-            <a href="">Search </a>
+            <a href="./search.php">Search </a>
           </li>
         </ul>
       </div>
