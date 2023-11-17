@@ -48,7 +48,7 @@ include('./php/global/server.php');
           <?php
           $getMovies = mysqli_query($server, "SELECT * from 
             movies ORDER BY 
-            release_date DESC
+            addition_date DESC
             LIMIT 20
           ");
           while ($dataGetMovies = mysqli_fetch_array($getMovies)) {

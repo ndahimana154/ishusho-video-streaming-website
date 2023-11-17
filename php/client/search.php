@@ -18,7 +18,7 @@ if (isset($_POST['s'])) {
             movies 
             WHERE movie_name LIKE '%$searchValue%'
             ORDER BY 
-            release_date DESC
+            movie_name ASC
             LIMIT 20
           ");
                     if (mysqli_num_rows($getMovies) < 1) {
@@ -73,7 +73,7 @@ if (isset($_POST['s'])) {
             movies 
             WHERE movie_name LIKE '%$searchValue%'
             ORDER BY 
-            release_date DESC
+            movie_name ASC
             LIMIT 20
           ");
                     if (mysqli_num_rows($getMovies) < 100000000000000) {
