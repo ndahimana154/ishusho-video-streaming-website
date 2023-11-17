@@ -24,20 +24,70 @@ include('./php/global/server.php');
       <div class="links">
         <ul>
           <li>
-            <a href="./index.php"> Home</a>
+            <a href="./index.php" class="active"> Home</a>
           </li>
           <li>
-            <a href="./movies.php" class="active"> Movies</a>
+            <a href="./movies.php"> Movies</a>
           </li>
           <li>
-            <a href="">Series</a>
+            <a href="./series.php">Series</a>
           </li>
           <li>
-            <a href="">Search </a>
+            <a href="./search.php">Search </a>
           </li>
         </ul>
       </div>
     </header>
+    <section class="move">
+      <div class="move-cont">
+        <h1>MOVIES
+          <span></span>
+        </h1>
+        <div class="move-row">
+          <?php
+          $getMovies = mysqli_query($server, "SELECT * from 
+            movies
+            ORDER BY 
+            release_date DESC
+            LIMIT 20
+          ");
+          if (mysqli_num_rows($getMovies) < 1) {
+          ?>
+            <div class="box">
+              :) Results found
+            </div>
+            <?php
+          } else {
+
+            while ($dataGetMovies = mysqli_fetch_array($getMovies)) {
+            ?>
+              <div class="box">
+                <img src="<?php echo $dataGetMovies['movie_poster']; ?>" alt="" />
+                <a href="watch.php?v=<?php echo $dataGetMovies['movie_id']; ?>">
+                  <div class="box-info">
+                    <img src="./images/youtube.png" alt="" />
+                    <div class="others">
+                      <p>
+                        <?php echo $dataGetMovies['movie_categories'] ?>
+                      </p>
+                      <span>
+                        <i class="fa fa-calendar"></i>
+                        <?php
+                        echo date('Y', strtotime($dataGetMovies['release_date']))
+                        ?>
+                      </span>
+                      <h4><?php echo $dataGetMovies['movie_name']; ?></h4>
+                    </div>
+                  </div>
+                </a>
+              </div>
+          <?php
+            }
+          }
+          ?>
+        </div>
+      </div>
+    </section>
   </main>
   <script src="./js/clientHeaderScroll.js"></script>
 
