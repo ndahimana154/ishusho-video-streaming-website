@@ -42,18 +42,16 @@ include('./php/global/server.php');
             <div class="move-cont">
                 <h1>
                     SERIES
-                    '<b><?php echo $searchValue ?></b>'
                     <span></span>
                 </h1>
                 <div class="move-row">
                     <?php
                     $getMovies = mysqli_query($server, "SELECT * from 
-            movies
-            ORDER BY 
-            addition_date DESC
-            LIMIT 20
-          ");
-                    if (mysqli_num_rows($getMovies) < 100000000000000) {
+                        series
+                        ORDER BY 
+                        serie_addition_time DESC
+                    ");
+                    if (mysqli_num_rows($getMovies) < 1) {
                     ?>
                         <div class="box">
                             :) Results found
@@ -64,21 +62,21 @@ include('./php/global/server.php');
                         while ($dataGetMovies = mysqli_fetch_array($getMovies)) {
                         ?>
                             <div class="box">
-                                <img src="<?php echo $dataGetMovies['movie_poster']; ?>" alt="" />
-                                <a href="watch.php?v=<?php echo $dataGetMovies['movie_id']; ?>">
+                                <img src="<?php echo $dataGetMovies['serie_poster']; ?>" alt="" />
+                                <a href="watch_series.php?v=<?php echo $dataGetMovies['serie_id']; ?>">
                                     <div class="box-info">
                                         <img src="./images/youtube.png" alt="" />
                                         <div class="others">
                                             <p>
-                                                <?php echo $dataGetMovies['movie_categories'] ?>
+                                                <?php echo $dataGetMovies['serie_categories'] ?>
                                             </p>
                                             <span>
                                                 <i class="fa fa-calendar"></i>
                                                 <?php
-                                                echo date('Y', strtotime($dataGetMovies['release_date']))
+                                                echo date('Y', strtotime($dataGetMovies['serie_releasedate']))
                                                 ?>
                                             </span>
-                                            <h4><?php echo $dataGetMovies['movie_name']; ?></h4>
+                                            <h4><?php echo $dataGetMovies['serie_name']; ?></h4>
                                         </div>
                                     </div>
                                 </a>

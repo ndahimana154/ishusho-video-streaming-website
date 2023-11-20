@@ -49,7 +49,6 @@ include('./php/global/server.php');
             movies
             ORDER BY 
             addition_date DESC
-            LIMIT 20
           ");
           if (mysqli_num_rows($getMovies) < 1) {
           ?>
