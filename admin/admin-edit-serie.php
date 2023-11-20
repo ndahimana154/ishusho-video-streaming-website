@@ -18,7 +18,7 @@ if (!isset($_SESSION['actingAdminUsername'])) {
     include('../php/global/cdns.php');
     ?>
     <link rel="stylesheet" href="../styles/admin-main.css">
-    <title>ISHUSHO Admin: Edit Movie</title>
+    <title>ISHUSHO Admin: Edit Serie Details</title>
 </head>
 
 <body>
@@ -46,8 +46,8 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                         } else {
                             $videoToEdit = $_GET['v'];
                             $checkIfVideoExists = mysqli_query($server, "SELECT * from 
-            movies
-            WHERE movie_id = '$videoToEdit'
+            series
+            WHERE serie_id= '$videoToEdit'
         ");
                             if (mysqli_num_rows($checkIfVideoExists) !== 1) {
                             ?>
@@ -59,7 +59,7 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                 $dataVideoExists = mysqli_fetch_array($checkIfVideoExists);
                             ?>
                                 <h1>
-                                    Edit movie "<?php echo $dataVideoExists['movie_name']; ?>"
+                                    Edit movie "<?php echo $dataVideoExists['serie_name']; ?>"
                                 </h1>
                                 <form action="" method="post" autocomplete="off">
                                     <?php
@@ -70,17 +70,16 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                         $tmdbMovieCate = mysqli_real_escape_string($server, $_POST['tmdbmovie_cate']);
                                         $tmdbPosterImage = mysqli_real_escape_string($server, $_POST['tmdbmovie_poster']);
                                         $tmdbMovieURL = mysqli_real_escape_string($server, $_POST['tmdbmovie_url']);
-                                        $tmdb720URL = mysqli_real_escape_string($server, $_POST['tmdb720url']);
-                                        $tmdb480URL = mysqli_real_escape_string($server, $_POST['tmdb480url']);
                                         $tmdbReleaseDate = mysqli_real_escape_string($server, $_POST['tmdbreleasedate']);
                                         $current_date = date('Y-m-d h:i:s');
 
                                         // Check if the movie exists in the datbase
-                                        $checkMovieExists = mysqli_query($server, "SELECT * from 
-                                movies 
-                                WHERE movie_id = '$tmdbMovieId'
-                            ");
-                                        if (mysqli_num_rows($checkMovieExists) < 1) {
+                                        $checkSerieExists = mysqli_query($server,"SELECT * from
+                                            series WHERE
+                                        serie_id = '$tmdbMovieId'
+                                        ");
+                                        if (mysqli_num_rows($checkSerieExists) < 1) {
+                                            echo "dsiojio jioej";
                                     ?>
                                             <p class="alert alert-danger">
                                                 Movie to update doesn't exists
@@ -88,24 +87,17 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                             <?php
                                         } else {
                                             // Update movie
-                                            $updateMovie = mysqli_query($server, "UPDATE movies 
+                                            $updateMovie = mysqli_query($server, "UPDATE series
                                                 set 
-                                                movie_name = '$tmdbMovieName',
-                                                movie_description = '$tmdbMovieDesc',
-                                                movie_categories = '$tmdbMovieCate',
-                                                movie_poster = '$tmdbPosterImage',
-                                                movie_url = '$tmdbMovieURL',
-                                                url720 = '$tmdb720URL',
-                                                url480 = '$tmdb480URL',
-                                                release_date = '$tmdbReleaseDate'
-                                                WHERE movie_id = '$tmdbMovieId'
+                                                serie_name = '$tmdbMovieName',
+                                                serie_overview = '$tmdbMovieDesc',
+                                                serie_categories = '$tmdbMovieCate',
+                                                serie_poster = '$tmdbPosterImage',
+                                                serie_url = '$tmdbMovieURL',
+                                                serie_releasedate = '$tmdbReleaseDate'
+                                                WHERE serie_id = '$tmdbMovieId'
                                             ");
 
-                                            // Save the CRUD log
-                                            $saveCrudLog = mysqli_query($server, "INSERT into
-                                                movies_crud_log 
-                                                VALUES(null,'$tmdbMovieId','UPDATING',now(),$actingAdminId)
-                                            ");
 
                                             if (!$updateMovie) {
                                             ?>
@@ -127,29 +119,29 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                     <div class="row">
                                         <div class="form-group mt-2">
                                             <label for="">
-                                                Movie ID
+                                                Serie ID
                                             </label>
-                                            <input type="text" class="form-control" name="movie_id" placeholder="Movie ID.." value="<?php echo $dataVideoExists['movie_id'] ?>" readonly>
+                                            <input type="text" class="form-control" name="movie_id" placeholder="Movie ID.." value="<?php echo $dataVideoExists['serie_id'] ?>" readonly>
                                         </div>
                                         <div class="form-group">
                                             <label for="">
-                                                Movie Name
+                                                Serie Name
                                             </label>
-                                            <input type="text" name="tmdbmovie_name" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['movie_name'] ?>">
+                                            <input type="text" name="tmdbmovie_name" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['serie_name'] ?>">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group mt-2">
                                             <label for="">
-                                                Movie description
+                                                Serie description
                                             </label>
-                                            <textarea type="text" name="tmdbmovie_desc" placeholder="Type..." class="form-control"><?php echo $dataVideoExists['movie_description'] ?></textarea>
+                                            <textarea type="text" name="tmdbmovie_desc" placeholder="Type..." class="form-control"><?php echo $dataVideoExists['serie_overview'] ?></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="">
-                                                Movie Categories
+                                                Serie Categories
                                             </label>
-                                            <input type="text" name="tmdbmovie_cate" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['movie_categories'] ?>">
+                                            <input type="text" name="tmdbmovie_cate" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['serie_categories'] ?>">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -157,27 +149,13 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                             <label for="">
                                                 Poster Image URL
                                             </label>
-                                            <input type="text" name="tmdbmovie_poster" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['movie_poster'] ?>">
+                                            <input type="text" name="tmdbmovie_poster" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['serie_poster'] ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="">
-                                                Movie URL
+                                                Serie URL
                                             </label>
-                                            <input type="text" name="tmdbmovie_url" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['movie_url'] ?>">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group mt-2">
-                                            <label for="">
-                                                720p URL
-                                            </label>
-                                            <input type="text" name="tmdb720url" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['url720'] ?>">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">
-                                                480p URL
-                                            </label>
-                                            <input type="text" name="tmdb480url" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['url480'] ?>">
+                                            <input type="text" name="tmdbmovie_url" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['serie_url'] ?>">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -185,7 +163,7 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                             <label for="">
                                                 Release date
                                             </label>
-                                            <input type="text" name="tmdbreleasedate" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['release_date'] ?>">
+                                            <input type="text" name="tmdbreleasedate" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['serie_releasedate'] ?>">
                                         </div>
 
                                     </div>

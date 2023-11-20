@@ -38,7 +38,29 @@
                 </li>
             </ul>
         </div>
-        
+        <div class="nav-part">
+            <h3>
+                SERIES
+            </h3>
+            <ul>
+                <li>
+                    <a href="admin-series-list.php">
+                        <i class="fas fa-film"></i>
+                        <span class="text">
+                            Series list
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admin-add-serie.php">
+                        <i class="fas fa-plus-circle"></i>
+                        <span class="text">
+                            Add Series
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
         <?php
         if ($actingAdminStatus == 'Administrator') {
         ?>
