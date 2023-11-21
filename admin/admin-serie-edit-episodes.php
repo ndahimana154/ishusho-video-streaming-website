@@ -10,7 +10,6 @@ if (!isset($_SESSION['actingAdminUsername'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -85,7 +84,6 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                         $Esode_name = mysqli_real_escape_string($server, $_POST['sode_name']);
                                         $E720url = mysqli_real_escape_string($server, $_POST['720_url']);
                                         $E480url = mysqli_real_escape_string($server, $_POST['480_url']);
-
                                         // Check duplicate names on same serie 
                                         $checkDuplNamesOnSameSerie = mysqli_query($server, "SELECT * from series_episodes 
                                             WHERE serie='$Eserie_id'
@@ -100,7 +98,6 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                             <?php
                                         } else {
                                             // Update the things
-
                                             $UpdateTheEpisode = mysqli_query($server,"UPDATE
                                                 series_episodes SET
                                                 serie = '$Eserie_id'

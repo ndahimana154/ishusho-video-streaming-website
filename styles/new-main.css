@@ -11,6 +11,11 @@ input[type="search"]::-webkit-search-clear-button {
   appearance: none;
   display: none;
 }
+.fail {
+  background: #ff0909;
+  color: #fff;
+  text-align: center;
+}
 body {
   overflow: auto;
   background: #000;
@@ -271,4 +276,69 @@ body {
   border: 2px solid #333;
   outline: 0;
   color: #fff;
+}
+
+
+.watch-section {
+  width: 100%;
+}
+.watch-section .watch-container {
+  width: 98%;
+  margin: auto;
+}
+.watch-section .watch-container .watch-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 50px;
+}
+.watch-section .watch-container .watch-info .left {
+  flex: 2.5;
+}
+.watch-section .watch-container .watch-info .left img {
+  width: 100%;
+  border-radius: 10px;
+}
+.watch-section .watch-container .watch-info .right {
+  flex: 3;
+  padding-left: 30px;
+}
+.watch-section .watch-container .watch-info .right h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.watch-section .watch-container .watch-info .right .genres {
+  font-size: 200px;
+  margin-top: 20px;
+}
+.watch-section .watch-container .watch-info .right .genres ul {
+  list-style: none;
+}
+.watch-section .watch-container .watch-info .right .genres ul li {
+  color: #ff0909;
+  font-size: 20px;
+}
+.watch-section .watch-container .watch-info .right .overview {
+  margin-top: 20px;
+  font-size: 19px;
+}
+.watch-section .watch-container .player-cont {
+  width: 100%;
+  margin-top: 20px;
+}
+.watch-section .watch-container .player-cont h1 {
+  font-size: 21px;
+}
+.watch-section .watch-container .player-cont h1 span {
+  display: block;
+  border-bottom: 5px solid #ff0909;
+  width: 80px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.watch-section .watch-container .player-cont video {
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
 }
