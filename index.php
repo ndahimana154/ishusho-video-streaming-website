@@ -121,6 +121,9 @@ include('./php/global/server.php');
         </div>
       </div>
     </section>
+    <?php
+      include('./php/client/footer.php');
+    ?>
   </main>
   <script src="./js/clientHeaderScroll.js"></script>
 

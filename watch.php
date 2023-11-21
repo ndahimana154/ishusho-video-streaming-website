@@ -103,6 +103,9 @@ include('./php/global/server.php');
             }
             ?>
         </section>
+        <?php
+        include('./php/client/footer.php');
+        ?>
     </main>
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 
