@@ -30,7 +30,7 @@ if (isset($_POST['s'])) {
                     while ($dataGetMovies = mysqli_fetch_array($getMovies)) {
                     ?>
                         <div class="box">
-                            <img src="<?php echo $dataGetMovies['movie_poster']; ?>" alt="" />
+                            <img src="<?php echo $dataGetMovies['movie_poster']; ?>" class="bigimg" alt="" />
                             <a href="watch.php?v=<?php echo $dataGetMovies['movie_id']; ?>">
                                 <div class="box-info">
                                     <img src="./images/youtube.png" alt="" />
@@ -58,7 +58,6 @@ if (isset($_POST['s'])) {
     <?php
     } elseif ($searchValue !== '' && $searchType === 'serie') {
     ?>
-
         <section class="move">
             <div class="move-cont">
                 <h1>
@@ -85,7 +84,7 @@ if (isset($_POST['s'])) {
                         while ($dataGetMovies = mysqli_fetch_array($getMovies)) {
                         ?>
                             <div class="box">
-                                <img src="<?php echo $dataGetMovies['serie_poster']; ?>" alt="" />
+                                <img src="<?php echo $dataGetMovies['serie_poster']; ?>" class="bigimg" alt="" />
                                 <a href="watch_series.php?v=<?php echo $dataGetMovies['serie_id']; ?>">
                                     <div class="box-info">
                                         <img src="./images/youtube.png" alt="" />

@@ -30,14 +30,12 @@ include('./php/global/server.php');
           $getMovies = mysqli_query($server, "SELECT * from 
             movies ORDER BY 
             addition_date DESC
-            LIMIT 20
+            LIMIT 12
           ");
           while ($dataGetMovies = mysqli_fetch_array($getMovies)) {
-
-
           ?>
             <div class="box">
-              <img src="<?php echo $dataGetMovies['movie_poster']; ?>" alt="" />
+              <img src="<?php echo $dataGetMovies['movie_poster']; ?>" class="showimg" alt="Image for <?php $dataGetMovies['movie_name'] ?>" />
               <a href="watch.php?v=<?php echo $dataGetMovies['movie_id']; ?>">
                 <div class="box-info">
                   <img src="./images/youtube.png" alt="" />
@@ -78,7 +76,7 @@ include('./php/global/server.php');
           while ($dataGetMovies = mysqli_fetch_array($getMovies)) {
           ?>
             <div class="box">
-              <img src="<?php echo $dataGetMovies['serie_poster']; ?>" alt="" />
+              <img src="<?php echo $dataGetMovies['serie_poster']; ?>" class="showimg" alt="Image for <?php $dataGetMovies['serie_name'] ?>" />
               <a href="watch_series.php?v=<?php echo $dataGetMovies['serie_id']; ?>">
                 <div class="box-info">
                   <img src="./images/youtube.png" alt="" />

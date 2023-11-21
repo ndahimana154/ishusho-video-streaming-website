@@ -57,7 +57,9 @@ include('./php/global/server.php');
                                 </h2>
                                 <div class="genres">
                                     <ul>
-                                        <li>Genre 1</li>
+                                        <li>
+                                            <?php echo $dataVideoExists['movie_categories']; ?>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="overview">

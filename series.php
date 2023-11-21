@@ -43,7 +43,7 @@ include('./php/global/server.php');
                         while ($dataGetMovies = mysqli_fetch_array($getMovies)) {
                         ?>
                             <div class="box">
-                                <img src="<?php echo $dataGetMovies['serie_poster']; ?>" alt="" />
+                                <img src="<?php echo $dataGetMovies['serie_poster']; ?>" class="bigimg" alt="Image for <?php echo $dataGetMovies['serie_name']; ?>" />
                                 <a href="watch_series.php?v=<?php echo $dataGetMovies['serie_id']; ?>">
                                     <div class="box-info">
                                         <img src="./images/youtube.png" alt="" />
