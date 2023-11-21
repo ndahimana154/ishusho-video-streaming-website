@@ -71,7 +71,7 @@ include('./php/global/server.php');
           $getMovies = mysqli_query($server, "SELECT * from 
             series ORDER BY 
             serie_addition_time DESC
-            LIMIT 20
+            LIMIT 12
           ");
           while ($dataGetMovies = mysqli_fetch_array($getMovies)) {
           ?>
