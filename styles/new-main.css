@@ -510,12 +510,15 @@ footer .links ul li a.active {
   .container .pop .cont .row .box .showimg {
     width: 250px;
   }
-
+.container .move {
+  width: 80%;
+  margin: auto;
+}
   .container .move .move-cont h1 {
     font-size: 18px;
   }
   .container .move .move-cont .move-row .box .bigimg {
-    width: calc((100vw - 4vw) / 4);
+    width: 250px;
   }
   .container .watch-container {
     width: 1000px;
