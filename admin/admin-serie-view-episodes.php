@@ -176,7 +176,7 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                             <label for="">
                                                 720 url
                                             </label>
-                                            <textarea type="text" name="720_url" placeholder="Type..." class="form-control"><?php echo $dataVideoExists['serie_overview'] ?></textarea>
+                                            <input type="text" name="720_url" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['serie_overview'] ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="">

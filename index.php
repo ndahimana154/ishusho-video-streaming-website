@@ -74,6 +74,7 @@ include('./php/global/server.php');
             LIMIT 12
           ");
           while ($dataGetMovies = mysqli_fetch_array($getMovies)) {
+            $serie_iid = $dataGetMovies['serie_id'];
           ?>
             <div class="box">
               <img src="<?php echo $dataGetMovies['serie_poster']; ?>" class="showimg" alt="Image for <?php $dataGetMovies['serie_name'] ?>" />
@@ -88,6 +89,23 @@ include('./php/global/server.php');
                       <i class="fa fa-calendar"></i>
                       <?php
                       echo date('Y', strtotime($dataGetMovies['serie_releasedate']))
+                      ?>
+                    </span>
+                    <span>
+                      <i class="fa fa-list"></i>
+                      <?php
+                      $getEpisodesNum = mysqli_query($server, "SELECT * from 
+                        series_episodes WHERE
+                        serie = '$serie_iid'
+                      ");
+                      echo mysqli_num_rows($getEpisodesNum);
+                      if (mysqli_num_rows($getEpisodesNum) == 1) {
+                        echo " Episode";
+                      }
+                      else {
+                        echo " Episodes";
+                      }
+                      // $dataEpisodesNum = mysqli_fetch_array($getEpisodesNum);
                       ?>
                     </span>
                     <h4><?php echo $dataGetMovies['serie_name']; ?></h4>
