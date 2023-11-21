@@ -206,9 +206,8 @@ body {
 .container .move .move-cont .move-row .box:hover a {
   bottom: 0;
   display: flex;
-
 }
-.container .move .move-cont .move-row .box-info{
+.container .move .move-cont .move-row .box-info {
   height: 100%;
   width: 100%;
   background: linear-gradient(to bottom, transparent, #000);
@@ -217,7 +216,7 @@ body {
   position: relative;
   bottom: 0;
 }
-.container .move .move-cont .move-row  .box-info img {
+.container .move .move-cont .move-row .box-info img {
   width: 40px;
   top: 30%;
   left: 50%;
@@ -243,17 +242,17 @@ body {
   text-align: center;
   margin-top: 10px;
 }
-.search .search-cont .form  ul {
+.search .search-cont .form ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
   list-style: none;
   margin: 10px;
 }
-.search .search-cont .form  ul li {
+.search .search-cont .form ul li {
   margin-right: 10px;
 }
-.search .search-cont .form  ul li button {
+.search .search-cont .form ul li button {
   background: 0;
   color: #fff;
   padding: 10px;
@@ -267,7 +266,7 @@ body {
 .search .search-cont .form ul li .live-search {
   background: #ff0909;
 }
-.search .search-cont .form  #searchField {
+.search .search-cont .form #searchField {
   width: 80%;
   padding: 10px;
   border: 0;
@@ -277,7 +276,6 @@ body {
   outline: 0;
   color: #fff;
 }
-
 
 .watch-section {
   width: 100%;
@@ -368,6 +366,8 @@ footer .logo h1 span {
 footer .links {
   flex: 1;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
 }
 footer .links ul {
   display: flex;
@@ -396,5 +396,5 @@ footer .links ul li a.active {
   text-align: center;
 }
 .dev a {
-  color: #fff;
+  color: #c7c7c7;
 }

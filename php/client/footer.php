@@ -17,8 +17,8 @@
                 <a href="./search.php">Search </a>
             </li>
         </ul>
+        <?php
+        include('./php/client/dev.php');
+        ?>
     </div>
 </footer>
-<?php
-include('./php/client/dev.php');
-?>
