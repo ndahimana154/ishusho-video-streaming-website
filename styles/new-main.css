@@ -33,6 +33,14 @@ body {
 .container header.scrolled {
   background: #333; /* Add your background color here */
 }
+.container header .menu-button {
+  background: transparent;
+  margin: 10px;
+  border: 0;
+  color: #fff; 
+  font-size: 20px;
+  display: none;
+}
 .container header .logo {
   margin: 20px;
 }
@@ -349,7 +357,7 @@ footer {
   position: sticky;
   top: 0;
   background: #333;
-  z-index: 15;
+  z-index: 1;
 }
 footer .logo {
   margin: 20px;
@@ -397,4 +405,43 @@ footer .links ul li a.active {
 }
 .dev a {
   color: #c7c7c7;
+}
+
+
+@media (max-width: 480px) {
+  .container header .menu-button {
+    display: block;
+  }
+  .container header .links {
+    height: 100vh;
+    width: 90vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 100;
+    background: #333;
+    display: none;
+  }
+  .container header .links .logo {
+    margin-left: 30px;
+    display: flex;
+  }
+  .container header .links .logo h1 {
+    flex: 1;
+  }
+  .container header .links .logo button {
+    background: transparent;
+    border: 0;
+  }
+  .container header .links .logo button i {
+    color: #ff0909;
+    font-size: 25px;
+  }
+  .container header .links ul {
+    flex-direction: column;
+  }
+  .container header .links ul li {
+    margin-top: 20px;
+  }
 }

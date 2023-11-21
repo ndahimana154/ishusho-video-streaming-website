@@ -16,27 +16,9 @@ include('./php/global/server.php');
 <body>
 
     <main class="container">
-        <header>
-            <div class="logo">
-                <h1>ISHU<span>SHO</span></h1>
-            </div>
-            <div class="links">
-                <ul>
-                    <li>
-                        <a href="./index.php"> Home</a>
-                    </li>
-                    <li>
-                        <a href="./movies.php"> Movies</a>
-                    </li>
-                    <li>
-                        <a href="./series.php" class="active">Series</a>
-                    </li>
-                    <li>
-                        <a href="./search.php">Search </a>
-                    </li>
-                </ul>
-            </div>
-        </header>
+        <?php
+        include("./php/client/nav.php");
+        ?>
         <section class="move">
             <div class="move-cont">
                 <h1>
@@ -91,13 +73,9 @@ include('./php/global/server.php');
         include('./php/client/footer.php');
         ?>
     </main>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="./js/clientHeaderScroll.js"></script>
-
-
-
-
-
-
+    <script src="./js/clientResponsivenes.js"></script>
 </body>
 
 </html>
