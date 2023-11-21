@@ -421,23 +421,7 @@ footer .links ul li a.active {
   .container .pop .cont .row .box .showimg {
     width: 250px;
   }
-  .watch-section .watch-container .watch-info {
-    display: flex;
-    flex-direction: column-reverse;
-    margin-top: 20px;
-  }
-  .watch-section .watch-container .watch-info .left img {
-    margin-top: 20px;
-  }
-  .watch-section .watch-container .watch-info .right {
-    padding: 0;
-  }
-  .watch-section .watch-container .watch-info .right .genres {
-    margin-top: 10px;
-  }
-  .watch-section .watch-container .watch-info .right .overview {
-    font-size: 14px;
-  }
+
   .container .move .move-cont h1 {
     font-size: 18px;
   }
@@ -505,23 +489,7 @@ footer .links ul li a.active {
   .container .pop .cont .row .box .showimg {
     width: calc((100vw - 2vw) / 4);
   }
-  .watch-section .watch-container .watch-info {
-    display: flex;
-    flex-direction: column-reverse;
-    margin-top: 20px;
-  }
-  .watch-section .watch-container .watch-info .left img {
-    margin-top: 20px;
-  }
-  .watch-section .watch-container .watch-info .right {
-    padding: 0;
-  }
-  .watch-section .watch-container .watch-info .right .genres {
-    margin-top: 10px;
-  }
-  .watch-section .watch-container .watch-info .right .overview {
-    font-size: 14px;
-  }
+ 
   .container .move .move-cont h1 {
     font-size: 18px;
   }
@@ -615,6 +583,15 @@ footer .links ul li a.active {
   .container .move .move-cont .move-row .box .bigimg {
     width: calc((100vw - 4vw) / 3);
   }
+  .search .search-cont .form ul li button {
+    font-size: 14px;
+    padding: 5px;
+    margin: 5px;
+  }
+.search .search-cont .form #searchField {
+  font-size: 14px;
+  padding: 5px;
+}
   footer {
     flex-direction: column;
   }
