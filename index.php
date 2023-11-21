@@ -19,6 +19,35 @@ include('./php/global/server.php');
     <?php
     include("./php/client/nav.php");
     ?>
+    <section class="hero">
+      <div class="cont">
+        <div class="slides">
+          <?php
+          $getMovies = mysqli_query($server, "SELECT * FROM movies ORDER BY RAND() LIMIT 8");
+          while ($movie = mysqli_fetch_array($getMovies)) {
+          ?><div class="slide">
+              <img src="<?php echo $movie['movie_poster']; ?>" alt="Movie Poster">
+              <a href="">
+                <div class="info">
+                  <h2><?php echo $movie['movie_name']; ?></h2>
+                  <p>
+                    <i class="fa fa-calendar"></i>
+                    <?php echo date('Y', strtotime($movie['release_date'])); ?>
+                  </p>
+                </div>
+              </a>
+            </div>
+          <?php
+          }
+          ?>
+
+        </div>
+      </div>
+      <div class="controls">
+        <button class="control" onclick="prevSlide()">❮</button>
+        <button class="control" onclick="nextSlide()">❯</button>
+      </div>
+    </section>
     <section class="pop-mov pop">
       <div class="cont">
         <h1>
@@ -101,8 +130,7 @@ include('./php/global/server.php');
                       echo mysqli_num_rows($getEpisodesNum);
                       if (mysqli_num_rows($getEpisodesNum) == 1) {
                         echo " Episode";
-                      }
-                      else {
+                      } else {
                         echo " Episodes";
                       }
                       // $dataEpisodesNum = mysqli_fetch_array($getEpisodesNum);
@@ -130,6 +158,7 @@ include('./php/global/server.php');
 
 
 
+  <script src="./js/clientHeroSliding.js"></script>
 
 
 
