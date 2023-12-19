@@ -126,7 +126,9 @@ body {
 }
 .info h2 {
   font-size: 21px;
-  color: #fff;
+  color: #ff0909;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .controls {
@@ -280,21 +282,14 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  display: none;
   left: 0;
   right: 0;
   color: #fff;
-  transition: bottom 0.3s ease-in-out;
-  transition: 0.5s ease-in-out;
-}
-.container .move .move-cont .move-row .box:hover a {
-  bottom: 0;
-  display: flex;
 }
 .container .move .move-cont .move-row .box-info {
   height: 100%;
   width: 100%;
-  background: linear-gradient(to bottom, transparent, #000);
+  background: linear-gradient(to bottom, transparent,transparent, #000);
 }
 .container .move .move-cont .move-row .info-cont {
   position: relative;
@@ -311,6 +306,14 @@ body {
   bottom: 0;
   position: absolute;
   padding: 10px;
+}
+.container .move .move-cont .move-row .box-info .others span {
+  margin-top: 5px;
+}
+.container .move .move-cont .move-row .box-info .others h4 {
+  color: #ff0909;
+  font-size: 18px;
+  margin-top: 10px;
 }
 
 .search {
@@ -580,6 +583,9 @@ bottom: 0;
 
 
 @media (max-width: 768px) {
+  h1,h2,h3,h4 {
+    font-size: 12px;
+  }
   .container header .menu-button {
     display: block;
   }

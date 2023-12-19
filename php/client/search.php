@@ -108,6 +108,7 @@ if (isset($_POST['s'])) {
                 </div>
             </div>
         </section>
+     
 <?php
     }
 }

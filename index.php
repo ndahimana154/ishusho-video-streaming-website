@@ -30,11 +30,11 @@ include('./php/global/server.php');
               <a href="watch.php?v=<?php echo $movie['movie_id']; ?>">
                 <div class="info">
                   <div class="info-cover">
-                    <h2><?php echo $movie['movie_name']; ?></h2>
                     <p>
                       <i class="fa fa-calendar"></i>
                       <?php echo date('Y', strtotime($movie['release_date'])); ?>
                     </p>
+                    <h2><?php echo $movie['movie_name']; ?></h2>
                   </div>
                 </div>
               </a>
