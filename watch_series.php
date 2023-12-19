@@ -48,9 +48,6 @@ include('./php/global/server.php');
                     </title>
                     <div class="watch-container">
                         <div class="watch-info">
-                            <div class="left">
-                                <img src="<?php echo $dataVideoExists['serie_poster'] ?>" alt="">
-                            </div>
                             <div class="right">
                                 <h2>
                                     <?php echo $dataVideoExists['serie_name']; ?>
@@ -59,7 +56,6 @@ include('./php/global/server.php');
                                     <ul>
                                         <li>
                                             <i class="fas fa-tag"></i>
-
                                             <?php echo $dataVideoExists['serie_categories']; ?>
                                         </li>
                                         <li>
@@ -73,7 +69,7 @@ include('./php/global/server.php');
                                             <?php
                                             $getEpisodesNum = mysqli_query($server, "SELECT * from 
                                                 series_episodes WHERE
-                                                serie = '$serie_iid'
+                                                serie = '$videoToWatch'
                                             ");
                                             echo mysqli_num_rows($getEpisodesNum);
                                             if (mysqli_num_rows($getEpisodesNum) == 1) {
@@ -93,12 +89,12 @@ include('./php/global/server.php');
                                 </div>
                             </div>
                         </div>
-                        <div class="player-cont">
-                                <div class="move-cont">
+                        <div class="pop">
+                                <div class="cont">
                                     <h1>EPISODES
                                         <span></span>
                                     </h1>
-                                    <div class="move-row">
+                                    <div class="row">
                                         <?php
                                         $getMovies = mysqli_query($server, "SELECT * from 
                                             series_episodes,series
@@ -118,21 +114,15 @@ include('./php/global/server.php');
                                             while ($dataGetMovies = mysqli_fetch_array($getMovies)) {
                                             ?>
                                                 <div class="box">
-                                                    <img src="<?php echo $dataGetMovies['serie_poster']; ?>" class="bigimg" alt="Image for <?php echo $dataGetMovies['serie_name']; ?>" />
+                                                    <img src="<?php echo $dataGetMovies['serie_poster']; ?>" class="showimg" alt="Image for <?php echo $dataGetMovies['serie_name']; ?>" />
                                                     <a href="watch_series_episodes.php?v=<?php echo $dataGetMovies['serie_id']; ?>&ep=<?php echo $dataGetMovies['id'] ?>">
                                                         <div class="box-info">
-                                                            <img src="./images/youtube.png" alt="" />
                                                             <div class="others">
                                                                 <p>
                                                                     <i class="fa fa-clock"></i>
                                                                     <?php echo date('d-m-Y',strtotime($dataGetMovies['addition_date'])); ?>
                                                                 </p>
-                                                                <span>
-                                                                    <!-- <i class="fa fa-calendar"></i> -->
-                                                                    <?php
-                                                                    // echo date('Y', strtotime($dataGetMovies['release_date']))
-                                                                    ?>
-                                                                </span>
+                                                               
                                                                 <h4><?php echo $dataGetMovies['episode_name']; ?></h4>
                                                             </div>
                                                         </div>

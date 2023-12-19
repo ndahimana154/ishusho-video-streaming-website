@@ -39,14 +39,12 @@ include('./php/global/server.php');
             </div>
             <?php
           } else {
-
             while ($dataGetMovies = mysqli_fetch_array($getMovies)) {
             ?>
               <div class="box">
                 <img src="<?php echo $dataGetMovies['movie_poster']; ?>" class="bigimg" alt="Image for <?php echo $dataGetMovies['movie_name']; ?>" />
                 <a href="watch.php?v=<?php echo $dataGetMovies['movie_id']; ?>">
                   <div class="box-info">
-                    <img src="./images/youtube.png" alt="" />
                     <div class="others">
                       <p>
                         <?php echo $dataGetMovies['movie_categories'] ?>

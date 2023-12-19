@@ -26,14 +26,16 @@ include('./php/global/server.php');
           $getMovies = mysqli_query($server, "SELECT * FROM movies ORDER BY RAND() LIMIT 8");
           while ($movie = mysqli_fetch_array($getMovies)) {
           ?><div class="slide">
-              <img src="<?php echo $movie['movie_poster']; ?>" alt="Movie Poster">
-              <a href="">
+                <img src="<?php echo $movie['movie_poster']; ?>" alt="Movie Poster">
+              <a href="watch.php?v=<?php echo $movie['movie_id']; ?>">
                 <div class="info">
-                  <h2><?php echo $movie['movie_name']; ?></h2>
-                  <p>
-                    <i class="fa fa-calendar"></i>
-                    <?php echo date('Y', strtotime($movie['release_date'])); ?>
-                  </p>
+                  <div class="info-cover">
+                    <h2><?php echo $movie['movie_name']; ?></h2>
+                    <p>
+                      <i class="fa fa-calendar"></i>
+                      <?php echo date('Y', strtotime($movie['release_date'])); ?>
+                    </p>
+                  </div>
                 </div>
               </a>
             </div>
@@ -67,7 +69,6 @@ include('./php/global/server.php');
               <img src="<?php echo $dataGetMovies['movie_poster']; ?>" class="showimg" alt="Image for <?php $dataGetMovies['movie_name'] ?>" />
               <a href="watch.php?v=<?php echo $dataGetMovies['movie_id']; ?>">
                 <div class="box-info">
-                  <img src="./images/youtube.png" alt="" />
                   <div class="others">
                     <p>
                       <?php echo $dataGetMovies['movie_categories'] ?>
@@ -109,7 +110,6 @@ include('./php/global/server.php');
               <img src="<?php echo $dataGetMovies['serie_poster']; ?>" class="showimg" alt="Image for <?php $dataGetMovies['serie_name'] ?>" />
               <a href="watch_series.php?v=<?php echo $dataGetMovies['serie_id']; ?>">
                 <div class="box-info">
-                  <img src="./images/youtube.png" alt="" />
                   <div class="others">
                     <p>
                       <?php echo $dataGetMovies['serie_categories'] ?>

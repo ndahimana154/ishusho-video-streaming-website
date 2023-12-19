@@ -46,7 +46,6 @@ include('./php/global/server.php');
                                 <img src="<?php echo $dataGetMovies['serie_poster']; ?>" class="bigimg" alt="Image for <?php echo $dataGetMovies['serie_name']; ?>" />
                                 <a href="watch_series.php?v=<?php echo $dataGetMovies['serie_id']; ?>">
                                     <div class="box-info">
-                                        <img src="./images/youtube.png" alt="" />
                                         <div class="others">
                                             <p>
                                                 <?php echo $dataGetMovies['serie_categories'] ?>

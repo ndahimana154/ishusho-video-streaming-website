@@ -33,7 +33,6 @@ if (isset($_POST['s'])) {
                             <img src="<?php echo $dataGetMovies['movie_poster']; ?>" class="bigimg" alt="" />
                             <a href="watch.php?v=<?php echo $dataGetMovies['movie_id']; ?>">
                                 <div class="box-info">
-                                    <img src="./images/youtube.png" alt="" />
                                     <div class="others">
                                         <p>
                                             <?php echo $dataGetMovies['movie_categories'] ?>
@@ -87,7 +86,6 @@ if (isset($_POST['s'])) {
                                 <img src="<?php echo $dataGetMovies['serie_poster']; ?>" class="bigimg" alt="" />
                                 <a href="watch_series.php?v=<?php echo $dataGetMovies['serie_id']; ?>">
                                     <div class="box-info">
-                                        <img src="./images/youtube.png" alt="" />
                                         <div class="others">
                                             <p>
                                                 <?php echo $dataGetMovies['serie_categories'] ?>

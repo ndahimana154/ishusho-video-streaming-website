@@ -48,9 +48,6 @@ include('./php/global/server.php');
                     </title>
                     <div class="watch-container">
                         <div class="watch-info">
-                            <div class="left">
-                                <img src="<?php echo $dataVideoExists['movie_poster'] ?>" alt="">
-                            </div>
                             <div class="right">
                                 <h2>
                                     <?php echo $dataVideoExists['movie_name']; ?>
