@@ -107,6 +107,12 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                             <?php
                             } else {
                                 $dataSodesExists = mysqli_fetch_array($checkSodeExists);
+                                $checkEpisodesExists = mysqli_query($server,"SELECT * from series_episodes
+                                    WHERE serie = '$videoToSode'
+                                ");
+                                if (mysqli_num_rows($checkEpisodesExists) > 0 ) {
+                                    $dataCheckEpisodesExists = mysqli_fetch_array($checkEpisodesExists);
+                                }
                             ?>
                                 <h1>
                                     Add new episodes '<?php echo $dataSodesExists['serie_name']; ?>'
@@ -176,13 +182,13 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                             <label for="">
                                                 720 url
                                             </label>
-                                            <input type="text" name="720_url" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['serie_overview'] ?>">
+                                            <input type="text" name="720_url" placeholder="Type..." class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <label for="">
                                                 480 url
                                             </label>
-                                            <input type="text" name="480_url" placeholder="Type..." class="form-control" value="<?php echo $dataVideoExists['serie_categories'] ?>">
+                                            <input type="text" name="480_url" placeholder="Type..." class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group m-2">

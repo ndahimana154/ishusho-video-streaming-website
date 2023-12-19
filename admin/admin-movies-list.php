@@ -80,9 +80,6 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                     Movie description
                                 </th>
                                 <th>
-                                    Views count
-                                </th>
-                                <th>
                                     Actions
                                 </th>
                             </tr>
@@ -113,14 +110,7 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                                     <td>
                                         <?php echo $dataMovies['movie_description']; ?>
                                     </td>
-                                    <td>
-                                        <?php
-                                        $getMovieViewsCount = mysqli_query($server, "SELECT * from 
-                                                    movie_views WHERE movie = '$video'
-                                                ");
-                                        echo mysqli_num_rows($getMovieViewsCount);
-                                        ?>
-                                    </td>
+                                   
                                     <td>
                                         <a href="admin-edit-movie.php?edit&v=<?php echo $video; ?>" class="">
                                             <i class="fa fa-edit text-primary"></i>

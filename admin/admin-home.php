@@ -48,21 +48,7 @@ if (!isset($_SESSION['actingAdminUsername'])) {
                             Total movies
                         </p>
                     </div>
-                    <div class="box">
-                        <?php
-                        $getTotalViews = mysqli_query($server, "SELECT 
-                                * from
-                                movie_views 
-                            ");
-                        ?>
-                        <i class="fa fa-eye"></i>
-                        <span>
-                            <?php echo mysqli_num_rows($getTotalViews); ?>
-                        </span>
-                        <p>
-                            Total views
-                        </p>
-                    </div>
+                
                     <div class="box" onclick="window.location.href='admin-users-list.php'">
                         <?php
                         $getTotalUsers = mysqli_query($server, "SELECT * from admins");
